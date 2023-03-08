@@ -58,6 +58,25 @@ myBib <- ReadBib("./EarthSight.bib", check = FALSE)
 
 ---
 ## Workflow and Methodology (Tongmeng and Zirui)
+
+---
+## Flood risk management —— Flood prediction
+### Overview
+| Data Pipeline Step | Description |
+| --- | --- |
+| Data Collection | Obtain geo-environmental data of Exeter, including elevation, slope, soil type, substrate, land cover, NDVI, land use, imperviousness, distance to river, and distance to road |
+| Preprocessing | Use QGIS to project all maps into an EPSG:27700 projected coordinate system for the United Kingdom, convert vector maps into raster maps, extract the clip of maps by mask layer based on the boundary of Exeter from an administrative division map of England, resample and set the resolution as 1 m, and convert data to numerical data from raster images with a grid size of 10 m using Rasterio tool |
+| Feature Selection | Use multicollinearity diagnosis test to prevent inputting similar features into the models and save training time and computation power. All features with VIF less than 10 are applied to train NB, perceptron, ANN, and CNN models |
+| Data Balancing | Use oversampling and undersampling methods to balance the data, as the distribution of flood risks is extremely imbalanced. Non-flood areas account for about 98%, 95%, and 90% for 30-year, 100-year, and 1000-year flood events. Level 4 risk areas only account for 0.01% and 0.06% for 30-year and 100-year flood events, respectively |
+| Model Selection and Assessment | Apply NB, perceptron, ANN, and CNN models to assess the flood risk of 30-year, 100-year, and 1000-year flood events. Evaluate model performance using appropriate metrics |
+---
+## Flood prediction
+### Metrics
+Accuracy, F-beta score, and receiver operating characteristic (ROC) curve, as well as the oversampling and undersampling techniques used to address the issue of data imbalance. 
+---
+## Flood prediction
+### What do we mean by accuracy:
+@
 ---
 ## Workflow for assessing flood damage
 ### Overview

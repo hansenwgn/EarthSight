@@ -4,7 +4,7 @@
     <title>Flood Risk Management in Malaysia</title>
     <meta charset="utf-8" />
     <meta name="author" content="Hansen Wiguna, Ahmad Farhan, Zirui Guo, Yao Wang, Tongmeng Xie" />
-    <script src="libs/header-attrs-2.16/header-attrs.js"></script>
+    <script src="libs/header-attrs-2.19/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
     <link rel="stylesheet" href="custom.css" type="text/css" />
   </head>
@@ -25,7 +25,7 @@ class: center, middle, inverse, title-slide
 ### University College London
 ]
 .date[
-### 2023/02/23 (updated: 2023-02-23)
+### 2023/02/23 (updated: 2023-03-08)
 ]
 
 ---
@@ -53,6 +53,37 @@ class: inverse, center, middle
 
 ---
 ## Workflow and Methodology (Tongmeng and Zirui)
+---
+## Workflow for assessing flood damage
+### Overview
+Considering that Malaysia does not have enough datasets for analyzing, in this case, we need to make sure that the datasets that we owned can satisfy the methodology we select.  
+
+Under this circumstance, we decide to use night light and census data to evaluate the number of people affected. The process is divided into three major steps: data pre-processing, model building and assessment.
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="night/flow.png" alt="flow chart" width="60%" /&gt;
+&lt;p class="caption"&gt;flow chart&lt;/p&gt;
+&lt;/div&gt;
+
+---
+## Workflow for assessing flood damage
+### Data pre-process
+
+* First, the NPP-VIIRS night-light remote sensing data were resampled to 500m × 500m based on the administrative map with image cropping, Albers projection and nearest neighbor interpolation, and the negative areas were assigned a value of 0. 
+
+* Second, using the statistical volume method of radiation normalization to reducing the impact of cloud cover on night-light remote sensing imagery (cite here)
+---
+## Workflow for assessing flood damage
+### Building model
+
+Light index can indicate the dynamics population and economic development. To be specific, light density can represent the density of population, light area can represent the distribution of population, the tendency of urban expansion.
+
+$$LD= $$ 
+$$LA= $$ 
+
+---
+## Workflow for assessing flood damage
+### Assessment
 
 ---
 ## Project Management Overview (Yao and Hansen)

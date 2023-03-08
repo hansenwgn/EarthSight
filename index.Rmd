@@ -58,6 +58,36 @@ myBib <- ReadBib("./EarthSight.bib", check = FALSE)
 
 ---
 ## Workflow and Methodology (Tongmeng and Zirui)
+---
+## Workflow for assessing flood damage
+### Overview
+Considering that Malaysia does not have enough datasets for analyzing, in this case, we need to make sure that the datasets that we owned can satisfy the methodology we select.  
+
+Under this circumstance, we decide to use night light and census data to evaluate the number of people affected. The process is divided into three major steps: data pre-processing, model building and assessment.
+
+```{r echo=FALSE, out.width='60%',fig.align='center',fig.cap='flow chart'}
+knitr::include_graphics('night/flow.png')
+```
+
+---
+## Workflow for assessing flood damage
+### Data pre-process
+
+* First, the NPP-VIIRS night-light remote sensing data were resampled to 500m × 500m based on the administrative map with image cropping, Albers projection and nearest neighbor interpolation, and the negative areas were assigned a value of 0. 
+
+* Second, using the statistical volume method of radiation normalization to reducing the impact of cloud cover on night-light remote sensing imagery (cite here)
+---
+## Workflow for assessing flood damage
+### Building model
+
+Light index can indicate the dynamics population and economic development. To be specific, light density can represent the density of population, light area can represent the distribution of population, the tendency of urban expansion.
+
+$$LD= $$ 
+$$LA= $$ 
+
+---
+## Workflow for assessing flood damage
+### Assessment
 
 ---
 ## Project Management Overview (Yao and Hansen)

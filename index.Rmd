@@ -110,9 +110,131 @@ $$LA= $$
 Before and after the flood, the brightness of the lights changed significantly, and the damage of power lines, the collapse of buildings and evacuation of people caused the brightness of the lights to decrease significantly.
 
 In that case, by comparing the images between before disaster and after disaster
----
-## Project Management Overview (Yao and Hansen)
 
+---
+class: inverse, center, middle
+# Project Management Overview 
+
+```{r echo=FALSE, out.width='50%',fig.align='center',fig.cap='flow chart'}
+knitr::include_graphics('img/pm1.png')
+```
+---
+# Outline of Project Management 
+
+.pull-left[
+### 1. Phases
+### 2. Project Plan
+### 3. Risks and Mitigative Actions
+### 4. Timeline
+### 5. Resource Allocation
+### 6. Value for Money
+
+]
+
+.pull-right[
+```{r echo=FALSE, out.width='80%', fig.align='center'}
+knitr::include_graphics('img/pm2.png')
+```
+]
+---
+## Project Management - Phases
+
+---
+## Project Management - Project Plan (1)
+1. Project initiation and stakeholder engagement (Month 1)
+  - Develop project charter 
+  - Identify and engage with stakeholders 
+  - Establish project governance structure 
+  
+2. Data Collection and Analysis (Month 2-5)
+  - Collect relevant data, including night light data, satellite imagery, digital elevation models, and flood maps.
+  - Preprocess the data to ensure that it is compatible with our analytical methods.
+  - Develop machine learning models, including naïve Bayes, perceptron, artificial neural networks (ANNs), and convolutional neural networks (CNNs).
+  - Train and evaluate the models using appropriate statistical metrics.
+  - Analyze historical flood data 
+
+
+---
+## Project Management - Project Plan (2)
+
+3. Flood Risk Mapping and Mitigation Strategies (Month 6-8)
+  - Develop a comprehensive flood risk management plan 
+  - Produce flood risk maps using the machine learning models and interpret the results.
+  - Identify areas that are most vulnerable to flooding and propose potential mitigation strategies.
+  - Building flooding monitoring and early warning systems 
+  - Building flooding forecasting system 
+  
+4. Report Writing and Presentation (Month 9-10)
+  - Write a comprehensive report detailing the methodology and findings of the study.
+  - Prepare a presentation to share the results and recommendations with stakeholders.
+  
+5. Monitor and Evaluate Effectiveness of Strategies 
+  - Establish a monitoring and evaluation framework 
+  - Conduct regular evaluations of the implemented strategies 
+  - Provide recommendations for improvements 
+  - Damage assessment 
+---
+## Project Management - Risks and Mitigative Actions
+
+.pull-left[
+1. Data Quality: There is a risk that the quality of the remote sensing data may be suboptimal, leading to inaccuracies in our analysis. To mitigate this risk, we will carefully evaluate the credibility of our data sources and conduct thorough quality checks during data preprocessing.
+2. Model Accuracy: There is a risk that the machine learning models may not accurately predict flood risk in Malaysia. To mitigate this risk, we will use appropriate statistical metrics to evaluate the accuracy of our models and adjust them as necessary.
+3. Stakeholder Engagement: There is a risk that stakeholders may not be receptive to our findings and recommendations. To mitigate this risk, we will engage with stakeholders throughout the project and ensure that our results are communicated clearly and effectively.
+]
+
+.pull-right[
+```{r echo=FALSE, out.width='80%', fig.align='center'}
+knitr::include_graphics('img/risk.png')
+```
+]
+---
+## Project Management - Timeline
+---
+## Project Management - Resource Allocation (1)
+.pull-left[
+- Project Manager: The project manager will oversee the entire project and will be responsible for the successful delivery of the project. They will need to have project management skills, experience in flood risk management, and excellent communication skills to engage with stakeholders. They will allocate 100% of their time to this project. 
+
+- Data Analyst: The data analyst will be responsible for collecting and analyzing earth observation data, identifying areas with high flood risk, and developing flood extent mapping. They will allocate 100% of their time to this project. 
+
+]
+.pull-right[
+```{r echo=FALSE, out.width='70%', fig.align='center'}
+knitr::include_graphics('img/manager.png')
+```
+]
+
+---
+## Project Management - Resource Allocation (2)
+.pull-left[
+```{r echo=FALSE, out.width='70%', fig.align='center'}
+knitr::include_graphics('img/analyst.png')
+```
+]
+.pull-right[
+- Flood Risk Management Expert: The flood risk management expert will be responsible for developing and implementing flood risk management strategies, identifying and prioritizing flood mitigation measures, and conducting regular evaluations of the implemented strategies. They will allocate 100% of their time to this project. 
+
+- Stakeholder Engagement Specialist: The stakeholder engagement specialist will be responsible for engaging with stakeholders, organizing workshops, and providing regular project updates. They will allocate 100% of their time to this project. 
+]
+
+
+---
+## Project Management - Resource Allocation (3)
+- Support Staff: Administrative support staff will be needed to provide assistance to the project manager and other project team members. They will allocate 20% of their time to this project. 
+
+- Earth Observation Data Services Provider: A vendor specializing in earth observation data services will be required to provide technical support for the project. They will allocate 100% of their time to this project. 
+
+- Flood Risk Management Consultants: External consultants with expertise in flood risk management will be engaged to support the flood risk management expert in developing and implementing flood risk management strategies. They will allocate 50% of their time to this project. 
+
+```{r echo=FALSE, out.width='20%', fig.align='center'}
+knitr::include_graphics('img/brain.png')
+```
+---
+## Project Management - Value for Money
+The total budget for this project is £500,000. To achieve value for money, we will ensure that all aspects of the project are efficient and cost-effective. We will prioritize the use of open-source software and free data sources wherever possible to minimize costs. Additionally, we will produce tangible and actionable outputs, such as flood risk maps and mitigation strategies, that can be incorporated into business as usual operations by the Malaysian government. By providing a valuable contribution to flood risk management in Malaysia, we believe that this project will be an excellent investment for the city.
+
+```{r echo=FALSE, out.width='25%', fig.align='center'}
+knitr::include_graphics('img/money.png')
+```
 ---
 ## Conclusion
 

@@ -1,5 +1,5 @@
 ---
-title: "Flood Risk Management of Kuala Lumpur, Malaysia"
+title: "Flood Risk Management Strategies for Kuala Lumpur, Malaysia"
 subtitle: "⚔<br/>Group: EarthSight"
 author: "Hansen Wiguna, Ahmad Farhan, Zirui Guo, Yao Wang, Tongmeng Xie"
 institute: "University College London"
@@ -54,9 +54,52 @@ myBib <- ReadBib("./EarthSight.bib", check = FALSE)
 ### 5. References
 
 ---
-## Context and Regulation (Farhan)
-
+# Context and Regulation
 ---
+# Problem statement
+
+- Malaysia had the highest percentage (67%) of the population exposed to floods among ASEAN Member States (between July 2012 and January 2019) as reported by ASEAN Coordinating Centre for Humanitarian Assistance on disaster management in March 2019.
+
+- Monsoon and flash floods are the primary climate related natural disasters in the country.
+
+- Nine percent of land area in Malaysia is flood prone and 4.8 million people live in areas at risk to flood.
+
+- Worst floods in the past 30 years have occurred from 2003 onwards. The majority of natural disasters from 1998 to 2018 were natural disasters (38/51).
+
+- Over the past 3 years, Malaysia has suffered from the heaviest floods in its history in over 2 decades, affecting states all across the nation.
+---
+
+#Flood Impacts
+
+###Social 
+- Tens of thousands suffer from population displacement annually. Lives have also been lost.
+
+###Economic
+- 
+
+###Environmental
+- 
+---
+# Location Selection: Why Kuala Lumpur?
+- Malaysia's capital city 
+- Serves as the economic centre of Malaysia alongside the neighbouring state of Selangor
+- Is the most complete infrastructure-wise, will act as a benchmark for other states in terms of development goals
+---
+# Malaysia's Disaster Risk Reduction Framework
+---
+# Research Questions
+---
+# Gaps Identified Within Current Framework
+--- 
+# Aims of Proposal
+
+- to provide a more comprehensive disaster response mechanism using current remotely sensed methods
+- to ensure alignment of data-driven methods for disaster risk mitigation in line with goals set by ratified international agreements (COP26, SDG goals, C40 cities)
+- to identify gaps for integration of proposed methods to existing disaster risk framework
+- to expand accessibility of findings beyond disaster response to be used by all relevant ministries
+- 
+
+--- 
 ## Workflow and Methodology (Tongmeng and Zirui)
 
 ---

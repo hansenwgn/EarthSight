@@ -188,6 +188,10 @@ knitr::include_graphics('img/pm2.png')
 ---
 ## Project Management - Phases
 
+```{r echo=FALSE, out.width='80%', fig.align='center'}
+knitr::include_graphics('img/pre2.png')
+```
+
 ---
 ## Project Management - Project Plan (1)
 1. Project initiation and stakeholder engagement (Month 1)

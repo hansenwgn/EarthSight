@@ -4,7 +4,7 @@
     <title>Flood Risk Management in Malaysia</title>
     <meta charset="utf-8" />
     <meta name="author" content="Hansen Wiguna, Ahmad Farhan, Zirui Guo, Yao Wang, Tongmeng Xie" />
-    <script src="libs/header-attrs-2.16/header-attrs.js"></script>
+    <script src="libs/header-attrs-2.19/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
     <link rel="stylesheet" href="custom.css" type="text/css" />
   </head>
@@ -25,7 +25,7 @@ class: center, middle, inverse, title-slide
 ### University College London
 ]
 .date[
-### 2023/02/23 (updated: 2023-03-12)
+### 2023/02/23 (updated: 2023-03-13)
 ]
 
 ---
@@ -73,39 +73,78 @@ Accuracy, F-beta score, and receiver operating characteristic (ROC) curve, as we
 ### What do we mean by accuracy:
 @
 ---
-## Workflow for assessing flood damage
+## Assessing flood damage
 ### Overview
 Considering that Malaysia does not have enough datasets for analyzing, in this case, we need to make sure that the datasets that we owned can satisfy the methodology we select.  
 
 Under this circumstance, we decide to use night light and census data to evaluate the number of people affected. The process is divided into three major steps: data pre-processing, model building and assessment.
-
+---
+## Assessing flood damage
+### Work flow
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="night/flow.png" alt="flow chart" width="60%" /&gt;
+&lt;img src="night/flow.png" alt="flow chart" width="90%" /&gt;
 &lt;p class="caption"&gt;flow chart&lt;/p&gt;
 &lt;/div&gt;
 
 ---
-## Workflow for assessing flood damage
+## Assessing flood damage
 ### Data pre-process
+
+
 
 * First, the NPP-VIIRS night-light remote sensing data were resampled to 500m × 500m based on the administrative map with image cropping, Albers projection and nearest neighbor interpolation, and the negative areas were assigned a value of 0. 
 
-* Second, using the statistical volume method of radiation normalization to reducing the impact of cloud cover on night-light remote sensing imagery (cite here)
+* Using the statistical volume method of radiation normalization to reducing the impact of cloud cover on night-light remote sensing imagery .
 ---
-## Workflow for assessing flood damage
+## Assessing flood damage
 ### Building model
 
-Light index can indicate the dynamics population and economic development. To be specific, light density can represent the density of population, light area can represent the distribution of population, the tendency of urban expansion.
-
-$$LD= $$ 
-$$LA= $$ 
+Light index can indicate the dynamics population and economic development. To be specific, light density can represent the density of population, light area can represent the distribution of population, the tendency of urban expansion .
 
 ---
-## Workflow for assessing flood damage
-### Assessment
+## Assessing flood damage
+### Building model
+`$$LD=(1/N)\sum_{i = 1}^{i=n}D N_{i}$$` 
+$$LA=\sum{i}, D N_{i}&gt;1 $$ 
+
+In the formula, `\(LD\)` is the average of light density, `\(LA\)` is the area of light and `\(DN_{i}\)` is the brightness of pixel.
+
+`$$y=a\times R_{VIIRS} + b$$` 
+`$$y=a\times R_{VIIRS}^{2} + b\times R_{VIIRS} + c$$` 
+
+`\(y\)` is population related parameters, `\(R_{VIIRS}\)` is NPP-VIIRS night light brightness radiation value, a, b, c are constant items.
+
+`$$P_{E}=\rho_{e} \times A_{e}$$` 
+
+`\(P_{E}\)` is the total affected population; `\(rho_{e}\)` is the population density of the affected area; `\(A_{e}\)` is the affected area.
+
+---
+## Assessing flood damage
+### Assess model
 Before and after the flood, the brightness of the lights changed significantly, and the damage of power lines, the collapse of buildings and evacuation of people caused the brightness of the lights to decrease significantly.
 
-In that case, by comparing the images between before disaster and after disaster
+In that case, by comparing the images of light between before disaster and after disaster we can get the information of the disappear of light. Based on above formula and information, we can estimate how many people suffer the disaster and economic losses as well.
+
+---
+class: inverse, center, middle
+
+#But how do we evaluate the accuracy of our model?#
+
+---
+## Assessing flood damage
+### Assess model
+
+Before we apply we model, we can estimate the number of people firstly by using the before disaster's image and access the accuracy of our model.
+
+`$$RE=\frac{R_{e}-R_{s}}{R_{s}}\times100\%$$` 
+
+`\(R_{e}\)` is the population of estimate, and `\(R_{s}\)` is the ture value of population.
+
+| Relative margin of error | Level of accuracy  |
+| --- | --- |
+|&gt; 50%| High   |
+| 25% ~ 50% | Medium |
+|&lt; 25% | Low    |
 
 ---
 class: inverse, center, middle

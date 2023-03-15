@@ -188,7 +188,13 @@ knitr::include_graphics('img/pm2.png')
 ---
 ## Project Management - Phases
 
-```{r echo=FALSE, out.width='80%', fig.align='center'}
+```{r echo=FALSE,fig.align='center'}
+knitr::include_graphics('img/gantt1.jpg')
+```
+---
+## Project Management - Preparedness
+
+```{r echo=FALSE, out.width='90%', fig.align='center'}
 knitr::include_graphics('img/pre2.png')
 ```
 

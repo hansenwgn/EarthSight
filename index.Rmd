@@ -306,6 +306,10 @@ knitr::include_graphics('img/risk.png')
 ]
 ---
 ## Project Management - Timeline
+```{r echo=FALSE, out.width='100%', fig.align='center'}
+knitr::include_graphics('img/gantt1.jpg')
+```
+
 ---
 ## Project Management - Resource Allocation (1)
 .pull-left[

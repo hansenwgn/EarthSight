@@ -135,10 +135,16 @@ myBib <- ReadBib("./EarthSight.bib", check = FALSE)
 
 --- 
 ## Workflow and Methodology (Tongmeng and Zirui)
+- To make policies implementable
+  - Need to propose real analysis workflow
+  - Fit the workflow into the flood solution
+  - Work on the chaining of function modules and potential automisation
+  give prototypes explore how can EO data and remote sensing facilitate
+- How these facilitate minimising risks for people, governments and more
 
 ---
 ## Flood risk management —— Flood prediction
-### Overview
+### Machine Learning based multifactor-considering blackbox
 | Data Pipeline Step | Description |
 | --- | --- |
 | Data Collection | Obtain geo-environmental data of Exeter, including elevation, slope, soil type, substrate, land cover, NDVI, land use, imperviousness, distance to river, and distance to road |

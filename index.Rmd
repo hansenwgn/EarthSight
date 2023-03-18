@@ -155,6 +155,26 @@ Accuracy, F-beta score, and receiver operating characteristic (ROC) curve, as we
 ### What do we mean by accuracy:
 @
 ---
+class: inverse, center, middle
+
+# Does Prediction Suffice?
+---
+## Is Prediction Enough For Flood Risk Management?
+### Pros and cons of flood prediction
+| Pros | Cons |
+| --- | --- |
+| Mature tech-flow | Computation-intense |
+| Promising accuracy | Prone to Data Flaws |
+| Utilising ML/DL models | Cumbersome to deployment|
+| Prediction Based on Abundant information | Data-expensive |
+| Almost always generate outcome | But Untimely! |
+---
+class: inverse, center, middle
+# Introducing Real-Time monitoring
+---
+## Flood risk management - Real Time monitoring
+
+---
 ## Assessing flood damage
 ### Overview
 Considering that Malaysia does not have enough datasets for analyzing, in this case, we need to make sure that the datasets that we owned can satisfy the methodology we select.  

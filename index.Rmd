@@ -172,6 +172,12 @@ $$Q = (P - Ia)^2 / (P - Ia + S)$$
   - Ia: initial abstraction, representing the water intercepted by vegetation, infiltration, and surface storage
   - S: potential maximum retention (depth), depending on soil type, land use, antecedent moisture conditions
   
+<div class="footnotes">
+<small>
+- Reference: US Army Corps of Engineers, Hydrologic Engineering Center. (n.d.). <a href="https://www.hec.usace.army.mil/software/hec-ras/" target="_blank">HEC-RAS</a>. 
+</small>
+</div>
+
 ---
 ### The old-fashioned way - Hydrological model 
 
@@ -195,13 +201,17 @@ video_files <- list.files(video_path,
 </video>
 
 
-
+<div class="footnotes">
+<small>
+- Reference: US Army Corps of Engineers, Hydrologic Engineering Center. (n.d.). <a href="https://www.hec.usace.army.mil/software/hec-ras/" target="_blank">HEC-RAS</a>. 
+</small>
+</div>
 ---
 ### The old-fashioned way - Hydrological model 
 DEM-based hydrological models 
 - Identify low-lying areas and floodplains in the urban landscape that are more susceptible to flooding. 
 - Inform decisions
-  - Planners: Floodplain zoning and land-use planning 
+  - Planners: Floodplain zoning and land-use planning ( flood-resistant land uses, such as parks and recreational areas, to flood-prone regions.)
   - Emergency response teams can prioritise levees and floodwalls construction in certain areas
   - Design evacuation plans to minimise casualties
 ```{r  include=FALSE}
@@ -215,16 +225,28 @@ video_files <- list.files(video_path,
 <video width="1440" height="560" autoplay>
 <source src="vids/400SqMileWatershed.mpeg" type="video/mp4">
 </video>
+
+
+
+<div class="footnotes">
+<small>
+- Reference: US Army Corps of Engineers, Hydrologic Engineering Center. (n.d.). <a href="https://www.hec.usace.army.mil/software/hec-ras/" target="_blank">HEC-RAS</a>. 
+</small>
+</div>
 ---
-## Flood risk management —— Flood prediction
-### Machine Learning based multifactor-considering blackbox
+## Flood risk management —— Flood prediction.
+
+
+---
+### Machine-Learning based prediction - A multifactor-considering blackbox
+
 | Data Pipeline Step | Description |
 | --- | --- |
-| Data Collection | Obtain geo-environmental data of Exeter, including elevation, slope, soil type, substrate, land cover, NDVI, land use, imperviousness, distance to river, and distance to road |
-| Preprocessing | Use QGIS to project all maps into an EPSG:27700 projected coordinate system for the United Kingdom, convert vector maps into raster maps, extract the clip of maps by mask layer based on the boundary of Exeter from an administrative division map of England, resample and set the resolution as 1 m, and convert data to numerical data from raster images with a grid size of 10 m using Rasterio tool |
-| Feature Selection | Use multicollinearity diagnosis test to prevent inputting similar features into the models and save training time and computation power. All features with VIF less than 10 are applied to train NB, perceptron, ANN, and CNN models |
-| Data Balancing | Use oversampling and undersampling methods to balance the data, as the distribution of flood risks is extremely imbalanced. Non-flood areas account for about 98%, 95%, and 90% for 30-year, 100-year, and 1000-year flood events. Level 4 risk areas only account for 0.01% and 0.06% for 30-year and 100-year flood events, respectively |
-| Model Selection and Assessment | Apply NB, perceptron, ANN, and CNN models to assess the flood risk of 30-year, 100-year, and 1000-year flood events. Evaluate model performance using appropriate metrics |
+| Data Collection | Collect geo-environmental data for Kuala Lumpur, including elevation, slope, soil type, substrate, land cover, NDVI, land use, imperviousness, distance to river, and distance to road |
+| Preprocessing | Standardize maps using QGIS: project into EPSG:3168 coordinate system, convert vector to raster maps, clip to Kuala Lumpur boundaries, resample to 1m resolution, and convert raster images to numerical data with 10m grid size using Rasterio |
+| Feature Selection | Perform multicollinearity diagnosis test to exclude similar features, reducing training time and computational power. Use features with VIF less than 10 in ANN models |
+| Data Balancing | Balance data with oversampling and undersampling due to imbalanced flood risk distribution. Adjust non-flood areas (98%, 95%, 90% for 30-, 100-, and 1000-year events) and level 4 risk areas (0.01% and 0.06% for 30- and 100-year events) |
+| Model Selection & Assessment | Apply NB, perceptron, ANN, and CNN models for 30-, 100-, and 1000-year flood events. Evaluate performance using suitable metrics |
 ---
 ## Flood prediction
 ### Metrics

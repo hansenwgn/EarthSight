@@ -4,7 +4,7 @@
     <title>Flood Risk Management Strategies for Kuala Lumpur, Malaysia</title>
     <meta charset="utf-8" />
     <meta name="author" content="Hansen Wiguna, Ahmad Farhan, Zirui Guo, Yao Wang, Tongmeng Xie" />
-    <script src="libs/header-attrs-2.20/header-attrs.js"></script>
+    <script src="libs/header-attrs-2.18/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
     <link rel="stylesheet" href="custom.css" type="text/css" />
   </head>
@@ -25,7 +25,7 @@ class: center, middle, inverse, title-slide
 ### University College London
 ]
 .date[
-### 2023/02/23 (updated: 2023-03-18)
+### 2023/02/23 (updated: 2023-03-19)
 ]
 
 ---
@@ -49,20 +49,11 @@ class: inverse, center, middle
 ### 5. References
 
 ---
+class: inverse, center, middle
+
+
+
 # Context and Regulation
----
-# Context and Regulation (Farhan)
-- Worst floods in the past 30 years have occurred from 2003 onwards. The majority of natural disasters from 1998 to 2018 were natural disasters (38/51).
-
-- Malaysia had the highest percentage (67%) of the population exposed to floods among ASEAN Member States (between July 2012 and January 2019) as reported by ASEAN Coordinating Centre for Humanitarian Assistance on disaster management in March 2019.
-
-- Nine percent of land area in Malaysia is flood prone and 4.8 million people live in areas at risk to flood.
-
-- Monsoon and flash floods are the primary climate related natural disasters in the country.
-
-- Malaysia’s flood prone area covers approximately 29 km and affects more than 4.82 million people.
-
-- Additionally, annual damage caused by floods has cost an annual US $4.82 million.
 ---
 # Malaysia's Disaster Risk Profile
 
@@ -115,10 +106,9 @@ class: inverse, center, middle
   - Framework is reactive instead of proactive, relevant authorities mobilise resources only after disaster has taken place.
   
   - Only disaster-related agencies are a part of the framework. Involvement should include all ministries affected by ramifications of natural disasters.
-
+  
 --- 
 # Aims of Proposal
-
 - To provide a more comprehensive disaster response mechanism using current remotely sensed methods.
 
 - To ensure alignment of data-driven methods for disaster risk mitigation in line with goals set by ratified international agreements (COP26, SDG goals, C40 cities, Sendai Framework).
@@ -127,12 +117,46 @@ class: inverse, center, middle
 
 - To expand accessibility of findings beyond disaster response to incorporate involvement of all relevant departments and ministries. 
 
+---
+
 --- 
 ## Workflow and Methodology (Tongmeng and Zirui)
+- To make policies implementable
+
+  - Need to propose real analysis workflow
+  
+  - Give prototypes how can EO data and remote sensing can help
+  
+  - Fit the workflow into the flood solution
+  
+  - Work on the chaining of function modules and potential automisation of pipeline
+  
+- How can these facilitate minimising risks for people, governments and more
+
+
+---
+
+## Flood Forecasting - A Quick Review
+### The old-fashioned way - Hydrological model 
+Uses historical data on precipitation, runoff, and other factors to predict flood occurrences. 
+Relies on physical equations and mathematical representations of the water cycle, e.g.:
+- Continuity Equation Balances water storage (∆S) with inflow (I) and outflow (O): 
+  \begin{equation}
+    \Delta S = I - O
+    \end{equation}
+- Runoff Estimation: 
+`$$Q = (P - Ia)^2 / (P - Ia + S)$$`
+  Where
+  - Q: runoff
+  - P: precipitation 
+  - Ia: initial abstraction
+  - S: potential maximum retention
+  - SCS Curve Number (Runoff) 
+  
 
 ---
 ## Flood risk management —— Flood prediction
-### Overview
+### Machine Learning based multifactor-considering blackbox
 | Data Pipeline Step | Description |
 | --- | --- |
 | Data Collection | Obtain geo-environmental data of Exeter, including elevation, slope, soil type, substrate, land cover, NDVI, land use, imperviousness, distance to river, and distance to road |

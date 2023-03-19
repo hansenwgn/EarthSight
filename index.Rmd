@@ -55,16 +55,7 @@ myBib <- ReadBib("./EarthSight.bib", check = FALSE)
 
 ---
 class: inverse, center, middle
-```{r xaringan-themer, include=FALSE, warning=FALSE}
-library(xaringanthemer)
-style_mono_light(
-  base_color = "#23395b",  
-  #header_font_google = google_font("Josefin Sans"),
-  #text_font_google   = google_font("Montserrat", "300", "300i"),
-  #code_font_google   = google_font("Fira Mono")
-  title_slide_background_image = "img/pic2.jpeg"
-)
-```
+
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(knitcitations)
@@ -131,10 +122,9 @@ myBib <- ReadBib("./EarthSight.bib", check = FALSE)
   - Framework is reactive instead of proactive, relevant authorities mobilise resources only after disaster has taken place.
   
   - Only disaster-related agencies are a part of the framework. Involvement should include all ministries affected by ramifications of natural disasters.
-
+  
 --- 
 # Aims of Proposal
-
 - To provide a more comprehensive disaster response mechanism using current remotely sensed methods.
 
 - To ensure alignment of data-driven methods for disaster risk mitigation in line with goals set by ratified international agreements (COP26, SDG goals, C40 cities, Sendai Framework).
@@ -143,14 +133,42 @@ myBib <- ReadBib("./EarthSight.bib", check = FALSE)
 
 - To expand accessibility of findings beyond disaster response to incorporate involvement of all relevant departments and ministries. 
 
+---
+
 --- 
 ## Workflow and Methodology (Tongmeng and Zirui)
 - To make policies implementable
+
   - Need to propose real analysis workflow
+  
+  - Give prototypes how can EO data and remote sensing can help
+  
   - Fit the workflow into the flood solution
-  - Work on the chaining of function modules and potential automisation
-  give prototypes explore how can EO data and remote sensing facilitate
-- How these facilitate minimising risks for people, governments and more
+  
+  - Work on the chaining of function modules and potential automisation of pipeline
+  
+- How can these facilitate minimising risks for people, governments and more
+
+
+---
+
+## Flood Forecasting - A Quick Review
+### The old-fashioned way - Hydrological model 
+Uses historical data on precipitation, runoff, and other factors to predict flood occurrences. 
+Relies on physical equations and mathematical representations of the water cycle, e.g.:
+- Continuity Equation Balances water storage (∆S) with inflow (I) and outflow (O): 
+  \begin{equation}
+    \Delta S = I - O
+    \end{equation}
+- Runoff Estimation: 
+$$Q = (P - Ia)^2 / (P - Ia + S)$$
+  Where
+  - Q: runoff
+  - P: precipitation 
+  - Ia: initial abstraction
+  - S: potential maximum retention
+  - SCS Curve Number (Runoff) 
+  
 
 ---
 ## Flood risk management —— Flood prediction

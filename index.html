@@ -125,7 +125,7 @@ class: inverse, center, middle
 
   - Need to propose real analysis workflow
   
-  - Give prototypes how can EO data and remote sensing can help
+  - Give prototypes illustrating how EO data and remote sensing can help
   
   - Fit the workflow into the flood solution
   
@@ -133,7 +133,11 @@ class: inverse, center, middle
   
 - How can these facilitate minimising risks for people, governments and more
 
-
+  - How are information gaps closed
+  
+  - How are loss prevented
+  
+  - Identify persisting risks
 ---
 
 ## Flood Forecasting - A Quick Review
@@ -147,13 +151,40 @@ Relies on physical equations and mathematical representations of the water cycle
 - Runoff Estimation: 
 `$$Q = (P - Ia)^2 / (P - Ia + S)$$`
   Where
-  - Q: runoff
-  - P: precipitation 
-  - Ia: initial abstraction
-  - S: potential maximum retention
-  - SCS Curve Number (Runoff) 
+  - Q: direct runoff (depth)
+  - P: direct runoff (depth) 
+  - Ia: initial abstraction, representing the water intercepted by vegetation, infiltration, and surface storage
+  - S: potential maximum retention (depth), depending on soil type, land use, antecedent moisture conditions
   
+---
+### The old-fashioned way - Hydrological model 
 
+Example of simulating watershed on a map of Digital Elevation Model (DEM)
+- Continuity Equation 
+  - Ensures the water balance
+  - Tracks the flow of water (through e.g. surface water, soil moisture and groundwater)
+- Runoff Estimation: 
+  - quantifying the amount of water 
+
+
+&lt;video style="display: block; margin-left: auto; margin-right: auto; width: auto; height: auto;" autoplay&gt;
+&lt;source src="vids/400SqMileWatershed.mpeg" type="video/mp4"&gt;
+&lt;/video&gt;
+
+
+
+---
+### The old-fashioned way - Hydrological model 
+DEM-based hydrological models 
+- Identify low-lying areas and floodplains in the urban landscape that are more susceptible to flooding. 
+- Inform decisions
+  - Planners: Floodplain zoning and land-use planning 
+  - Emergency response teams can prioritise levees and floodwalls construction in certain areas
+  - Design evacuation plans to minimise casualties
+
+&lt;video width="1440" height="560" autoplay&gt;
+&lt;source src="vids/400SqMileWatershed.mpeg" type="video/mp4"&gt;
+&lt;/video&gt;
 ---
 ## Flood risk management —— Flood prediction
 ### Machine Learning based multifactor-considering blackbox

@@ -4,7 +4,7 @@
     <title>Flood Risk Management Strategies for Kuala Lumpur, Malaysia</title>
     <meta charset="utf-8" />
     <meta name="author" content="Hansen Wiguna, Ahmad Farhan, Zirui Guo, Yao Wang, Tongmeng Xie" />
-    <script src="libs/header-attrs-2.18/header-attrs.js"></script>
+    <script src="libs/header-attrs-2.16/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
     <link rel="stylesheet" href="custom.css" type="text/css" />
   </head>
@@ -38,9 +38,9 @@ class: inverse, center, middle
 # Outline
 
 
-### 1. Context and Regulation
+### 1. Context, Regulation, &amp; Problem Definition
 
-### 2. Workflow and Methodology
+### 2. Approach Methodology &amp; Output
 
 ### 3. Project Management Overview
 
@@ -53,7 +53,7 @@ class: inverse, center, middle
 
 
 
-# Context and Regulation
+# Context, Regulation, &amp; Problem Definition
 ---
 # Malaysia's Disaster Risk Profile
 
@@ -74,10 +74,10 @@ class: inverse, center, middle
 - Tens of thousands suffer from population displacement annually. Lives have also been lost.
 
 ###Economic
-- 
+
 
 ###Environmental
-- 
+
 ---
 # Location Selection: Why Kuala Lumpur?
 - Malaysia's capital city.
@@ -89,12 +89,16 @@ class: inverse, center, middle
 # Research Questions
 - What is the current structure and practices in place to respond to natural disasters?
 
-- what gaps can we identify within the aforementioned system?
+- What gaps can we identify within the aforementioned system?
 
 - What current remote sensing methods are being used to acquire topographic information in Malaysia?
 
 ---
 # Malaysia's Disaster Risk Reduction Framework
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="img/msian disaster risk framework.png" alt="flow chart" width="50%" /&gt;
+&lt;p class="caption"&gt;flow chart&lt;/p&gt;
+&lt;/div&gt;
 
 ---
 # Gaps Identified Within Current Framework
@@ -107,7 +111,7 @@ class: inverse, center, middle
   
   - Only disaster-related agencies are a part of the framework. Involvement should include all ministries affected by ramifications of natural disasters.
   
---- 
+---
 # Aims of Proposal
 - To provide a more comprehensive disaster response mechanism using current remotely sensed methods.
 
@@ -115,9 +119,13 @@ class: inverse, center, middle
 
 - To identify gaps for integration of proposed methods to existing disaster risk framework.
 
-- To expand accessibility of findings beyond disaster response to incorporate involvement of all relevant departments and ministries. 
+- To expand accessibility of findings beyond disaster response to incorporate involvement of all relevant departments and ministries.
 
 ---
+class: inverse, center, middle
+# Approach Methodology &amp; Output
+---
+
 
 --- 
 ## Workflow and Methodology (Tongmeng and Zirui)
@@ -138,6 +146,7 @@ class: inverse, center, middle
   - How are loss prevented
   
   - Identify persisting risks
+  
 ---
 
 ## Flood Forecasting - A Quick Review
@@ -346,53 +355,55 @@ class: inverse, center, middle
 ---
 ## Project Management - Phases
 
-&lt;img src="img/gantt1.jpg" style="display: block; margin: auto;" /&gt;
----
-## Project Management - Preparedness
-
-&lt;img src="img/pre2.png" width="90%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/Phases.jpeg" style="display: block; margin: auto;" /&gt;
 
 ---
-## Project Management - Project Plan (1)
-1. Project initiation and stakeholder engagement (Month 1)
+## Project Management - Project Plan / Work Package (1)
+#### 1. Project initiation and stakeholder engagement (Month 1)
   - Develop project charter 
-  - Identify and engage with stakeholders 
-  - Establish project governance structure 
+  - Identify and engage with stakeholders (set questions) 
+  - Establish project governance structure (National Disaster Management Agency)
   
-2. Data Collection and Analysis (Month 2-5)
+#### 2. Data Collection and Analysis (Month 2-5)
   - Collect relevant data, including night light data, satellite imagery, digital elevation models, and flood maps.
+  - Analyze historical flood data 
   - Preprocess the data to ensure that it is compatible with our analytical methods.
   - Develop machine learning models, including naïve Bayes, perceptron, artificial neural networks (ANNs), and convolutional neural networks (CNNs).
   - Train and evaluate the models using appropriate statistical metrics.
-  - Analyze historical flood data 
+  
 
 
 ---
-## Project Management - Project Plan (2)
+## Project Management - Project Plan / Work Package (2)
 
-3. Flood Risk Mapping and Mitigation Strategies (Month 6-8)
-  - Develop a comprehensive flood risk management plan 
+#### 3. Flood Risk Mapping and Mitigation Strategies (Month 6-8)
+  - Using DEM-based hydrological models to identify floodplain zoning (flood-resistant and flood-prone land uses)
   - Produce flood risk maps using the machine learning models and interpret the results.
   - Identify areas that are most vulnerable to flooding and propose potential mitigation strategies.
-  - Building flooding monitoring and early warning systems 
-  - Building flooding forecasting system 
+  - Building flooding forecasting/prediction system 
   
-4. Report Writing and Presentation (Month 9-10)
+&lt;img src="img/floodrisk.png" width="45%" style="display: block; margin: auto;" /&gt;
+
+---
+## Project Management - Project Plan / Work Package (3)  
+#### 4. Report Writing and Presentation (Month 9-10)
   - Write a comprehensive report detailing the methodology and findings of the study.
   - Prepare a presentation to share the results and recommendations with stakeholders.
+  - Showcasing and stakeholder meeting, follow up by refinement
   
-5. Monitor and Evaluate Effectiveness of Strategies 
+#### 5. Monitor and Evaluate Effectiveness of Strategies (Month 11-12) 
   - Establish a monitoring and evaluation framework 
   - Conduct regular evaluations of the implemented strategies 
   - Provide recommendations for improvements 
-  - Damage assessment 
+  - Damage assessment (light data indicates disaster victims and economic loss)
 ---
 ## Project Management - Risks and Mitigative Actions
 
 .pull-left[
-1. Data Quality: There is a risk that the quality of the remote sensing data may be suboptimal, leading to inaccuracies in our analysis. To mitigate this risk, we will carefully evaluate the credibility of our data sources and conduct thorough quality checks during data preprocessing.
-2. Model Accuracy: There is a risk that the machine learning models may not accurately predict flood risk in Malaysia. To mitigate this risk, we will use appropriate statistical metrics to evaluate the accuracy of our models and adjust them as necessary.
-3. Stakeholder Engagement: There is a risk that stakeholders may not be receptive to our findings and recommendations. To mitigate this risk, we will engage with stakeholders throughout the project and ensure that our results are communicated clearly and effectively.
+1. Data Quality: Poor remote sensing data may lead to analysis errors. We will carefully assess our data sources and perform thorough quality checks during data preprocessing to reduce this risk.
+2. Model Accuracy: Machine learning models may mispredict Malaysian flood risk. We'll use statistical metrics to assess our models' accuracy and adjust them to reduce this risk.
+3. Stakeholder Engagement: Stakeholders may reject our findings and recommendations. We will engage stakeholders throughout the project and clearly communicate our results to mitigate this risk.
+4. Human resources: clear contracts to avoid leaving mid-project.
 ]
 
 .pull-right[
@@ -405,9 +416,9 @@ class: inverse, center, middle
 ---
 ## Project Management - Resource Allocation (1)
 .pull-left[
-- Project Manager: The project manager will oversee the entire project and will be responsible for the successful delivery of the project. They will need to have project management skills, experience in flood risk management, and excellent communication skills to engage with stakeholders. They will allocate 100% of their time to this project. 
+- Project Manager: Project managers oversee and deliver projects. To engage stakeholders, they will need project management, flood risk management, and good communication skills. This project will consume all their time.
 
-- Data Analyst: The data analyst will be responsible for collecting and analyzing earth observation data, identifying areas with high flood risk, and developing flood extent mapping. They will allocate 100% of their time to this project. 
+- Data Analyst (2): The data analyst will collect, analyse, and map flood-prone areas using earth observation data. This project will consume all their time.
 
 ]
 .pull-right[
@@ -420,31 +431,50 @@ class: inverse, center, middle
 &lt;img src="img/analyst.png" width="70%" style="display: block; margin: auto;" /&gt;
 ]
 .pull-right[
-- Flood Risk Management Expert: The flood risk management expert will be responsible for developing and implementing flood risk management strategies, identifying and prioritizing flood mitigation measures, and conducting regular evaluations of the implemented strategies. They will allocate 100% of their time to this project. 
+- Flood Risk Management Expert/Analyst: The flood risk management expert will develop and implement flood risk management strategies, prioritise flood mitigation measures, and evaluate them regularly. This project will consume all their time.
 
-- Stakeholder Engagement Specialist: The stakeholder engagement specialist will be responsible for engaging with stakeholders, organizing workshops, and providing regular project updates. They will allocate 100% of their time to this project. 
+- Stakeholder Engagement Specialist: The stakeholder engagement specialist will organise workshops, engage stakeholders, and provide project updates. This project will consume all their time.
 ]
 
 
 ---
-## Project Management - Resource Allocation (3)
-- Support Staff: Administrative support staff will be needed to provide assistance to the project manager and other project team members. They will allocate 20% of their time to this project. 
-
-- Earth Observation Data Services Provider: A vendor specializing in earth observation data services will be required to provide technical support for the project. They will allocate 100% of their time to this project. 
-
-- Flood Risk Management Consultants: External consultants with expertise in flood risk management will be engaged to support the flood risk management expert in developing and implementing flood risk management strategies. They will allocate 50% of their time to this project. 
-
-&lt;img src="img/brain.png" width="20%" style="display: block; margin: auto;" /&gt;
----
 ## Project Management - Value for Money
-The total budget for this project is £500,000. To achieve value for money, we will ensure that all aspects of the project are efficient and cost-effective. We will prioritize the use of open-source software and free data sources wherever possible to minimize costs. Additionally, we will produce tangible and actionable outputs, such as flood risk maps and mitigation strategies, that can be incorporated into business as usual operations by the Malaysian government. By providing a valuable contribution to flood risk management in Malaysia, we believe that this project will be an excellent investment for the city.
+The total budget for this project is £500,000. We'll streamline the project to save money. To reduce costs, we will prioritise open-source software and free data sources. We will also create flood risk maps and mitigation strategies that the Malaysian government can use in its daily operations. This project will help Malaysian flood risk management, making it a good city investment.
 
-&lt;img src="img/money.png" width="25%" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/cost.png" width="55%" style="display: block; margin: auto;" /&gt;
+---
+## Project Management - Deliverable
+
+
+&lt;img src="img/deliverable.png" width="85%" style="display: block; margin: auto;" /&gt;
 ---
 ## Conclusion
 
+.pull-left[
+#### Problem Definition 
+Nine percent of land area in Malaysia is flood prone and 4.8 million people live in areas at risk to flood.  
+
+#### Approach:  
+DEM-based hydrological models to identify floodplain zoning &amp; apply NB, perceptron, ANN, and CNN models for prediction &amp; light data for density
+
+#### Output:  
+Floodplain &amp; risk map, prediction model, and damage assessment
+
+
+]
+.pull-right[
+
+#### Project Plan:  
+Multiple work packages with risk and mitigative actions, timeline, resource allocation, and value for money
+
+#### Improvements:  
+From reactive to a more proactive approach by developing prediction model, assessing damage in a more scalable way using earth observation data, and provide transparent information for different stakeholders
+]
 ---
 ## References
+‘CHA-Malaysia.pdf’ (no date). Available at: https://jfit-for-science.asia/wp-content/uploads/2019/11/CHA-Malaysia.pdf (Accessed: 19 March 2023).
+
+Malaysia - Vulnerability | Climate Change Knowledge Portal (no date). Available at: https://climateknowledgeportal.worldbank.org/country/malaysia/vulnerability (Accessed: 23 February 2023).
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>

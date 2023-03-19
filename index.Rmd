@@ -493,8 +493,8 @@ knitr::include_graphics('img/brain.png')
 ## Project Management - Value for Money
 The total budget for this project is £500,000. To achieve value for money, we will ensure that all aspects of the project are efficient and cost-effective. We will prioritize the use of open-source software and free data sources wherever possible to minimize costs. Additionally, we will produce tangible and actionable outputs, such as flood risk maps and mitigation strategies, that can be incorporated into business as usual operations by the Malaysian government. By providing a valuable contribution to flood risk management in Malaysia, we believe that this project will be an excellent investment for the city.
 
-```{r echo=FALSE, out.width='25%', fig.align='center'}
-knitr::include_graphics('img/money.png')
+```{r echo=FALSE, out.width='80%', fig.align='center'}
+knitr::include_graphics('img/Totalbudget.png') 
 ```
 ---
 ## Conclusion

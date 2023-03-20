@@ -70,7 +70,7 @@ BibOptions(check.entries = FALSE,
            no.print.fields=c("doi", "url", "urldate", "issn"))
 myBib <- ReadBib("./EarthSight.bib", check = FALSE)
 ```
-# Context, Regulation, & Problem Definition
+# Context, Existing Regulations, & Problem Definition
 ---
 # Malaysia's Disaster Risk Profile
 
@@ -91,17 +91,21 @@ myBib <- ReadBib("./EarthSight.bib", check = FALSE)
 - Tens of thousands suffer from population displacement annually. Lives have also been lost.
 
 ###Economic
+- Damages and losses across different sectors (public infrastructure, housing, business premises, private vehicles, agriculture,) amounting to USD138.8 million in 2022 alone.
 
+- Certain states suffer from heavier losses than others, impacting economic output and weakening their ability to recover. 
 
 ###Environmental
-
+- Exacerbates soil erosion, leading to an increase in landslides (another natural disaster Malaysia is prone to).
 ---
 # Location Selection: Why Kuala Lumpur?
 - Malaysia's capital city.
 
-- Serves as the economic centre of Malaysia alongside the neighbouring state of Selangor. Damage to the federal territory and its surroundings impedes the country's economic output as most businesses are closest to the country's capital.
+- Serves as the economic centre of Malaysia alongside the neighbouring state of Selangor (known as the Klang Valley). Damage to the federal territory and its surroundings impedes the country's economic output as most businesses are closest to the country's capital.
 
 - KL is the most complete infrastructure-wise, will act as a benchmark for other states in terms of development goals.
+
+We intend to introduce the proposed model across the rest of the Malaysian states if this preliminary project is deemed successful.
 ---
 # Research Questions
 - What is the current structure and practices in place to respond to natural disasters?
@@ -115,17 +119,22 @@ myBib <- ReadBib("./EarthSight.bib", check = FALSE)
 ```{r echo=FALSE, out.width='50%',fig.align='center',fig.cap='flow chart'}
 knitr::include_graphics('img/msian disaster risk framework.png')
 ```
-
 ---
-# Gaps Identified Within Current Framework
+# Malaysia's Disaster Risk Reduction Framework
+```{r echo=FALSE, out.width='50%',fig.align='center',fig.cap='flow chart'}
+knitr::include_graphics('img/msian area of concern.png')
+```
+---
+# Gaps Identified Within Framework/Problem Definition
 
-- Insufficient data available
-  - Data is only sufficient enough for forecasting flood occurrence, not for the prediction of potential flood prone areas or the.
+- Insufficient data
+  - Data is only sufficient enough for forecasting flood occurrence, not for the prediction of potential flood prone areas.
 
-- Disjointed coordination between relevant stakeholders: 
+- Disjointed coordination between relevant stakeholders
   - Framework is reactive instead of proactive, relevant authorities mobilise resources only after disaster has taken place.
   
-  - Only disaster-related agencies are a part of the framework. Involvement should include all ministries affected by ramifications of natural disasters.
+- Incomplete stakeholder involvement
+   - Only disaster-related agencies are a part of the framework. Involvement should include all ministries affected by ramifications of natural disasters.
   
 ---
 # Aims of Proposal
@@ -568,7 +577,7 @@ The total budget for this project is £500,000. We'll streamline the project to 
 knitr::include_graphics('img/cost.png')
 ```
 ---
-## Project Management - Deliverable
+## Project Management - Deliverables
 
 
 ```{r echo=FALSE, out.width='85%', fig.align='center'}
@@ -595,7 +604,7 @@ Floodplain & risk map, prediction model, and damage assessment
 Multiple work packages with risk and mitigative actions, timeline, resource allocation, and value for money
 
 #### Improvements:  
-From reactive to a more proactive approach by developing prediction model, assessing damage in a more scalable way using earth observation data, and provide transparent information for different stakeholders
+From reactive to a more proactive approach by developing a prediction model, assessing damage in a more scalable way using earth observation data, and providing more extensive, transparent information to be used by a wider range of stakeholders.
 ]
 ---
 ## References

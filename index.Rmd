@@ -44,7 +44,7 @@ myBib <- ReadBib("./EarthSight.bib", check = FALSE)
 # Outline
 
 
-### 1. Context, Regulation, & Problem Definition
+### 1. Context, Existing Regulations, & Problem Definition
 
 ### 2. Approach Methodology & Output
 
@@ -91,7 +91,7 @@ myBib <- ReadBib("./EarthSight.bib", check = FALSE)
 - Tens of thousands suffer from population displacement annually. Lives have also been lost.
 
 ###Economic
-- Damages and losses across different sectors (public infrastructure, housing, business premises, private vehicles, agriculture,) amounting to USD138.8 million in 2022 alone.
+- Damages and losses across different sectors (public infrastructure, housing, business premises, private vehicles, agriculture,) amounting to £113 million / USD138.8 million / RM622.4 million in 2022 alone.
 
 - Certain states suffer from heavier losses than others, impacting economic output and weakening their ability to recover. 
 
@@ -153,7 +153,7 @@ class: inverse, center, middle
 
 
 --- 
-## Workflow and Methodology (Tongmeng and Zirui)
+## Workflow and Methodology
 - To make policies implementable
 
   - Need to propose real analysis workflow
@@ -168,7 +168,7 @@ class: inverse, center, middle
 
   - How are information gaps closed
   
-  - How are loss prevented
+  - How are losses prevented
   
   - Identify persisting risks
   
@@ -253,18 +253,18 @@ video_files <- list.files(video_path,
 </div>
 ---
 class: inverse, middle
-# How can Flood prediction help Kuala lumpur: 
+# How Can Flood Prediction Help Kuala Lumpur: 
 
 
 - ### How are information gaps closed
 
-- ### How are loss prevented
+- ### How are losses prevented
 
-- ### Identify persisting risks
+- ### Identifying persisting risks
 
   
 ---
-## Flood risk management —— Flood prediction.
+## Flood Risk Management - Flood Prediction
 Significant Savings in Case Studies
 - European Union's Floods Directive: €460 million saved in avoided damages (2006-2015)
 
@@ -283,7 +283,7 @@ References: - European Environment Agency (2016). Flood risks and environmental 
 </div>
 
 ---
-### Machine-Learning based prediction - A blackbox considering numerous factors
+### Machine-learning based prediction - A blackbox considering numerous factors
 
 | Data Pipeline Step | Description |
 | --- | --- |
@@ -299,15 +299,20 @@ Accuracy, F-beta score, and receiver operating characteristic (ROC) curve, as we
 ---
 ## Flood prediction
 ### What do we mean by accuracy:
+<<<<<<< HEAD
+@
+---class: inverse, center, middle
+=======
 ```{r echo=FALSE, out.width='100%',fig.align='center',fig.cap=''}
 knitr::include_graphics('img/Prediction_Accuracy.png')
 ```
 ---
 class: inverse, center, middle
+>>>>>>> 293eb51efdc6b170d445d24f21a33c35a29cf2aa
 
 # Does Prediction Suffice?
 ---
-## Is Prediction Enough For Flood Risk Management?
+## Is prediction enough for flood risk management?
 ### Pros and cons of ML-based flood prediction
 | Pros | Cons |
 | --- | --- |
@@ -318,15 +323,15 @@ class: inverse, center, middle
 | Almost always generate outcome | But Untimely! |
 ---
 class: inverse, center, middle
-# Introducing Real-Time monitoring
+# Introducing Real-time Monitoring
 ---
-## Flood risk management - Real Time monitoring
-### Synthetic Aperture Radar (SAR) for Flood Monitoring
+## Flood risk management - real-time monitoring
+### Synthetic Aperture Radar (SAR) for flood monitoring
 - SAR: Active remote sensing technology that can penetrate clouds, operate day or night, and provide high-resolution imagery1
 
 - Real-time flood monitoring: Timely and accurate information on flood extent, duration, and impact for emergency response and management
 
-### Benefits of SAR-based Flood Monitoring
+### Benefits of SAR-based flood monitoring
 - Rapid assessment: Quick acquisition and processing of data, enabling faster response to flood events
 
 - Wide-area coverage: Large-scale flood monitoring, even in remote or inaccessible areas
@@ -352,7 +357,7 @@ class: inverse, center, middle
 # When AIoT comes in
 
 ---
-## AIOT comes to aid
+## AIoT comes to aid
 
 - Introducing AIoT (Artificial Intelligence of Things) can lead to more efficient, accurate, and timely flood prediction systems.
 
@@ -398,24 +403,43 @@ Automated decision-making based on Real-time analytics:
 - Implement AI models on edge devices or cloud platforms to perform real-time analytics on remote-sensing data. 
 
 - By combining remote sensing with other IoT sensor data, AI models can generate valuable insights and enable automated decision-making for flood prediction, and floodplain zoning.
-
-
+---
+class: inverse, center, middle
+# Assessing flood damage
 ---
 ## Assessing flood damage
 ### Overview
 Considering that Malaysia does not have enough datasets for analyzing, in this case, we need to make sure that the datasets that we owned can satisfy the methodology we select.  
 
 Under this circumstance, we decide to use night light and census data to evaluate the number of people affected. The process is divided into three major steps: data pre-processing, model building and assessment.
+
+.pull-left[
+```{r echo=FALSE, out.width='90%',fig.align='center'}
+knitr::include_graphics('night/night.png')
+```
+
+.small[
+[Night light image of KL. Source: GEE](https://earth.google.com/web/@3.06161352,101.91436214,253.81115254a,616076.51047044d,35y,0h,0t,0r/data=CiQSIhIgMGY3ZTJkYzdlOGExMTFlNjk5MGQ2ZjgxOGQ2OWE2ZTc)
+]
+]
+
 ---
 ## Assessing flood damage
 ### Work flow
 ```{r echo=FALSE, out.width='100%',fig.align='center',fig.cap='flow chart'}
-knitr::include_graphics('night/flow.png')
+knitr::include_graphics('night/nor.png')
 ```
 
 ---
 ## Assessing flood damage
-### Data pre-process
+### Work flow
+```{r echo=FALSE, out.width='100%',fig.align='center',fig.cap='flow chart'}
+knitr::include_graphics('night/eva.png')
+```
+
+---
+## Assessing flood damage
+### Data pre-processing
 
 ```{r, load_refs, include=FALSE, cache=FALSE}
 library(RefManageR)
@@ -457,7 +481,7 @@ $P_{E}$ is the total affected population; $rho_{e}$ is the population density of
 
 ---
 ## Assessing flood damage
-### Assess model
+### Assessing model
 Before and after the flood, the brightness of the lights changed significantly, and the damage of power lines, the collapse of buildings and evacuation of people caused the brightness of the lights to decrease significantly.
 
 In that case, by comparing the images of light between before disaster and after disaster we can get the information of the disappear of light. Based on above formula and information, we can estimate how many people suffer the disaster and economic losses as well.
@@ -469,7 +493,7 @@ class: inverse, center, middle
 
 ---
 ## Assessing flood damage
-### Assess model
+### Assessing model
 
 Before we apply we model, we can estimate the number of people firstly by using the before disaster's image and access the accuracy of our model.
 
@@ -486,9 +510,21 @@ $R_{e}$ is the population of estimate, and $R_{s}$ is the ture value of populati
 ---
 ## Assessing flood damage
 ### Visulization
+
+.pull-left[
 ```{r echo=FALSE, out.width='100%',fig.align='left'}
-knitr::include_graphics('night/visu.jpg')
+knitr::include_graphics('night/visu1.jpg')
 ```
+]
+
+.pull-right[
+```{r echo=FALSE, out.width='100%',fig.align='left'}
+knitr::include_graphics('night/visu2.jpg')
+```
+]
+
+[Visualisation of the affected population and area in Guangxi](https://d-wanfangdata-com-cn.libproxy.ucl.ac.uk/periodical/zrzhxb202203009)
+
 
 ---
 class: inverse, center, middle
@@ -498,8 +534,12 @@ class: inverse, center, middle
 knitr::include_graphics('img/pm1.png')
 ```
 ---
+<<<<<<< HEAD
+# Project Management Outline
+=======
 
 # Outline of Project Management 
+>>>>>>> 293eb51efdc6b170d445d24f21a33c35a29cf2aa
 
 .pull-left[
 ### 1. Phases
@@ -615,7 +655,7 @@ knitr::include_graphics('img/analyst.png')
 
 ---
 ## Project Management - Value for Money
-The total budget for this project is £500,000. We'll streamline the project to save money. To reduce costs, we will prioritise open-source software and free data sources. We will also create flood risk maps and mitigation strategies that the Malaysian government can use in its daily operations. This project will help Malaysian flood risk management, making it a good city investment.
+The total budget for this project is £500,000 / USD613,515 / RM2.8 million. We will streamline the project to save money. To reduce costs, we will prioritise open-source software and free data sources. We will also create flood risk maps and mitigation strategies that the Malaysian government can use in its daily operations. This project will help Malaysian flood risk management, making it a good city investment.
 
 ```{r echo=FALSE, out.width='55%', fig.align='center'}
 knitr::include_graphics('img/cost.png')
@@ -652,24 +692,35 @@ From reactive to a more proactive approach by developing a prediction model, ass
 ]
 ---
 ## References
+
+Aslam Perwaiz et al. (2020) ‘Disaster Risk Reduction in Malaysia: Status report 2020’. United Nations Office for Disaster Risk Reduction - Regional Office for Asia and Pacific Asian Disaster Preparedness Center.
+
 ‘CHA-Malaysia.pdf’ (no date). Available at: https://jfit-for-science.asia/wp-content/uploads/2019/11/CHA-Malaysia.pdf (Accessed: 19 March 2023).
 
-Malaysia - Vulnerability | Climate Change Knowledge Portal (no date). Available at: https://climateknowledgeportal.worldbank.org/country/malaysia/vulnerability (Accessed: 23 February 2023).
-
-European Environment Agency (2016). Flood risks and environmental vulnerability. https://www.eea.europa.eu/publications/flood-risks-and-environmental-vulnerability
-
-Li, Z.; Liu, H.; Luo, C.; Fu, G. Assessing Surface Water Flood Risks in Urban Areas Using Machine Learning. Water 2021, 13, 3520. https://doi.org/10.3390/w13243520
+Country: Malaysia (2023). Available at: 
+https://www.adrc.asia/management/MYS/mechanism_of_disaster_management_and_relief.html (Accessed: 20 March 2023).
 
 Demir, I., & Krajewski, W. F. (2016). Towards an information system for the socially vulnerable groups during flood disasters. https://uiowa.edu/
 
----
-## References
 Environment Agency and Met Office (2015). Flood Forecasting Centre Five Year Review 2009-2014. https://www.gov.uk/government/publications/flood-forecasting-centre-5-year-review-2009-to-2014
 
+European Environment Agency (2016). Flood risks and environmental vulnerability. https://www.eea.europa.eu/publications/flood-risks-and-environmental-vulnerability
+
+---
+## References
+
 He, Yuanrong, Xiaorong Wang, Chunfang Chai, Deqing Yu, Yuanmao Zheng, and Dongkun Li. 2022. “Flood Damage Assessment and Visualization Based on NPP-VIIRS Nighttime Light Remote Sensing.” Journal of Natural Disaster, June, 13. https://doi.org/10.13577/j.jnd.2022.0309.
+
+IOWA FLOOD INFORMATION SYSTEM. https://ifis.iowafloodcenter.org/ifis/
+
+Li, Z.; Liu, H.; Luo, C.; Fu, G. Assessing Surface Water Flood Risks in Urban Areas Using Machine Learning. Water 2021, 13, 3520. https://doi.org/10.3390/w13243520
+
+‘Malaysia: Disaster Management Reference Handbook (June 2019)’ (2019). Center for Excellence in Disaster Management and Humanitarian Assistance.
+
+Malaysia - Vulnerability | Climate Change Knowledge Portal (no date). Available at: https://climateknowledgeportal.worldbank.org/country/malaysia/vulnerability (Accessed: 23 February 2023).
 
 NASA Jet Propulsion Laboratory (2021). ARIA Project. https://aria.jpl.nasa.gov/
 
 Tay, C.W.J., Yun, SH., Chin, S.T. et al. Rapid flood and damage mapping using synthetic aperture radar in response to Typhoon Hagibis, Japan. Sci Data 7, 100 (2020). https://doi.org/10.1038/s41597-020-0443-5'
 
-IOWA FLOOD INFORMATION SYSTEM. https://ifis.iowafloodcenter.org/ifis/
+

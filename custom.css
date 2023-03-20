@@ -17,3 +17,8 @@
   color: #4d8dc9;
   }
 }
+
+.mobile-center{
+    float:none !important;
+    margin: 0 auto
+}

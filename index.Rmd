@@ -44,7 +44,7 @@ myBib <- ReadBib("./EarthSight.bib", check = FALSE)
 # Outline
 
 
-### 1. Context, Regulation, & Problem Definition
+### 1. Context, Existing Regulations, & Problem Definition
 
 ### 2. Approach Methodology & Output
 
@@ -91,7 +91,7 @@ myBib <- ReadBib("./EarthSight.bib", check = FALSE)
 - Tens of thousands suffer from population displacement annually. Lives have also been lost.
 
 ###Economic
-- Damages and losses across different sectors (public infrastructure, housing, business premises, private vehicles, agriculture,) amounting to USD138.8 million in 2022 alone.
+- Damages and losses across different sectors (public infrastructure, housing, business premises, private vehicles, agriculture,) amounting to £113 million / USD138.8 million / RM622.4 million in 2022 alone.
 
 - Certain states suffer from heavier losses than others, impacting economic output and weakening their ability to recover. 
 
@@ -153,7 +153,7 @@ class: inverse, center, middle
 
 
 --- 
-## Workflow and Methodology (Tongmeng and Zirui)
+## Workflow and Methodology
 - To make policies implementable
 
   - Need to propose real analysis workflow
@@ -168,7 +168,7 @@ class: inverse, center, middle
 
   - How are information gaps closed
   
-  - How are loss prevented
+  - How are losses prevented
   
   - Identify persisting risks
   
@@ -253,18 +253,18 @@ video_files <- list.files(video_path,
 </div>
 ---
 class: inverse, middle
-# How can Flood prediction help Kuala lumpur: 
+# How Can Flood Prediction Help Kuala Lumpur: 
 
 
 - ### How are information gaps closed
 
-- ### How are loss prevented
+- ### How are losses prevented
 
-- ### Identify persisting risks
+- ### Identifying persisting risks
 
   
 ---
-## Flood risk management —— Flood prediction.
+## Flood Risk Management - Flood Prediction
 Significant Savings in Case Studies
 - European Union's Floods Directive: €460 million saved in avoided damages (2006-2015)
 
@@ -283,7 +283,7 @@ References: - European Environment Agency (2016). Flood risks and environmental 
 </div>
 
 ---
-### Machine-Learning based prediction - A blackbox considering numerous factors
+### Machine-learning based prediction - A blackbox considering numerous factors
 
 | Data Pipeline Step | Description |
 | --- | --- |
@@ -300,12 +300,11 @@ Accuracy, F-beta score, and receiver operating characteristic (ROC) curve, as we
 ## Flood prediction
 ### What do we mean by accuracy:
 @
----
-class: inverse, center, middle
+---class: inverse, center, middle
 
 # Does Prediction Suffice?
 ---
-## Is Prediction Enough For Flood Risk Management?
+## Is prediction enough for flood risk management?
 ### Pros and cons of ML-based flood prediction
 | Pros | Cons |
 | --- | --- |
@@ -316,15 +315,15 @@ class: inverse, center, middle
 | Almost always generate outcome | But Untimely! |
 ---
 class: inverse, center, middle
-# Introducing Real-Time monitoring
+# Introducing Real-time Monitoring
 ---
-## Flood risk management - Real Time monitoring
-### Synthetic Aperture Radar (SAR) for Flood Monitoring
+## Flood risk management - real-time monitoring
+### Synthetic Aperture Radar (SAR) for flood monitoring
 - SAR: Active remote sensing technology that can penetrate clouds, operate day or night, and provide high-resolution imagery1
 
 - Real-time flood monitoring: Timely and accurate information on flood extent, duration, and impact for emergency response and management
 
-### Benefits of SAR-based Flood Monitoring
+### Benefits of SAR-based flood monitoring
 - Rapid assessment: Quick acquisition and processing of data, enabling faster response to flood events
 
 - Wide-area coverage: Large-scale flood monitoring, even in remote or inaccessible areas
@@ -343,7 +342,7 @@ class: inverse, center, middle
 # When AIoT comes in
 
 ---
-## AIOT comes to aid
+## AIoT comes to aid
 
 - Introducing AIoT (Artificial Intelligence of Things) can lead to more efficient, accurate, and timely flood prediction systems.
 
@@ -371,7 +370,7 @@ knitr::include_graphics('night/flow.png')
 
 ---
 ## Assessing flood damage
-### Data pre-process
+### Data pre-processing
 
 ```{r, load_refs, include=FALSE, cache=FALSE}
 library(RefManageR)
@@ -413,7 +412,7 @@ $P_{E}$ is the total affected population; $rho_{e}$ is the population density of
 
 ---
 ## Assessing flood damage
-### Assess model
+### Assessing model
 Before and after the flood, the brightness of the lights changed significantly, and the damage of power lines, the collapse of buildings and evacuation of people caused the brightness of the lights to decrease significantly.
 
 In that case, by comparing the images of light between before disaster and after disaster we can get the information of the disappear of light. Based on above formula and information, we can estimate how many people suffer the disaster and economic losses as well.
@@ -425,7 +424,7 @@ class: inverse, center, middle
 
 ---
 ## Assessing flood damage
-### Assess model
+### Assessing model
 
 Before we apply we model, we can estimate the number of people firstly by using the before disaster's image and access the accuracy of our model.
 
@@ -447,7 +446,7 @@ class: inverse, center, middle
 knitr::include_graphics('img/pm1.png')
 ```
 ---
-# Outline of Project Management 
+# Project Management Outline
 
 .pull-left[
 ### 1. Phases
@@ -563,7 +562,7 @@ knitr::include_graphics('img/analyst.png')
 
 ---
 ## Project Management - Value for Money
-The total budget for this project is £500,000. We'll streamline the project to save money. To reduce costs, we will prioritise open-source software and free data sources. We will also create flood risk maps and mitigation strategies that the Malaysian government can use in its daily operations. This project will help Malaysian flood risk management, making it a good city investment.
+The total budget for this project is £500,000 / USD613,515 / RM2.8 million. We will streamline the project to save money. To reduce costs, we will prioritise open-source software and free data sources. We will also create flood risk maps and mitigation strategies that the Malaysian government can use in its daily operations. This project will help Malaysian flood risk management, making it a good city investment.
 
 ```{r echo=FALSE, out.width='55%', fig.align='center'}
 knitr::include_graphics('img/cost.png')

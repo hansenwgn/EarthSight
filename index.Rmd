@@ -299,16 +299,13 @@ Accuracy, F-beta score, and receiver operating characteristic (ROC) curve, as we
 ---
 ## Flood prediction
 ### What do we mean by accuracy:
-<<<<<<< HEAD
-@
----class: inverse, center, middle
-=======
+
 ```{r echo=FALSE, out.width='100%',fig.align='center',fig.cap=''}
 knitr::include_graphics('img/Prediction_Accuracy.png')
 ```
 ---
 class: inverse, center, middle
->>>>>>> 293eb51efdc6b170d445d24f21a33c35a29cf2aa
+
 
 # Does Prediction Suffice?
 ---

@@ -270,8 +270,14 @@ Accuracy, F-beta score, and receiver operating characteristic (ROC) curve, as we
 ---
 ## Flood prediction
 ### What do we mean by accuracy:
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 @
 ---class: inverse, center, middle
+=======
+&lt;img src="img/Prediction_Accuracy.png" width="100%" style="display: block; margin: auto;" /&gt;
+---
+class: inverse, center, middle
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 293eb51efdc6b170d445d24f21a33c35a29cf2aa
 
 # Does Prediction Suffice?
 ---
@@ -307,6 +313,12 @@ References: - NASA Jet Propulsion Laboratory (2021). ARIA Project. https://aria.
 &lt;/small&gt;
 &lt;/div&gt;
 
+---
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="img/SAR.webp" alt="FPM comparison with GSI aerial and Planet optical imagery for Fukushima. Credit: https://doi.org/10.1038/s41597-020-0443-5" width="75%" /&gt;
+&lt;p class="caption"&gt;FPM comparison with GSI aerial and Planet optical imagery for Fukushima. Credit: https://doi.org/10.1038/s41597-020-0443-5&lt;/p&gt;
+&lt;/div&gt;
 
 ---
 class: inverse, center, middle
@@ -325,6 +337,43 @@ class: inverse, center, middle
 | Prediction Based on Abundant information | Data-expensive | Edge computing and data compression reduce data costs |
 | Almost always generate outcome | Untimely | Real-time data enables timely predictions and responses |
 
+---
+## AIOT comes to aid
+Connect remote-sensing devices to the IoT network, enabling seamless data flow between devices, edge computing nodes, and cloud platforms. This integration can be achieved using communication protocols such as MQTT, LoRaWAN, or Zigbee.
+
+- Data Collection: IoT devices, such as water level sensors, soil moisture sensors, and weather stations, can supplement EO data and remote sensing information by providing real-time, hyperlocal data on environmental factors crucial for flood prediction.
+
+- Data Fusion: Combine IoT-generated data with EO data and remote sensing datasets, such as SAR imagery, to create a comprehensive, high-resolution input for ML-based flood prediction models. This fusion helps capture local variations and enhances overall model performance.
+
+- Model Calibration and Validation: IoT devices can provide continuous ground truth data for calibrating and validating ML-based flood prediction models, leading to more accurate and reliable predictions.
+
+- Adaptive Learning: Allows ML models to continuously learn from real-time data, adjusting and improving predictive capabilities over time. This adaptability is crucial for responding to changing environmental conditions and extreme weather events.
+
+---
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="img/Iowa_alert.png" alt="Real-time water levels and stage heights with flood alert levels, and flood forecast" width="100%" /&gt;
+&lt;p class="caption"&gt;Real-time water levels and stage heights with flood alert levels, and flood forecast&lt;/p&gt;
+&lt;/div&gt;
+---
+class: inverse, center, middle
+# What else is possible?
+
+
+---
+##Outlook - Automated decision-making 
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="img/AIoT_workflow.png" alt="AIoT Architecture for auto-decision-making" width="70%" /&gt;
+&lt;p class="caption"&gt;AIoT Architecture for auto-decision-making&lt;/p&gt;
+&lt;/div&gt;
+
+---
+##Outlook - Automated decision-making based on Real-time analytics
+Automated decision-making based on Real-time analytics: 
+
+- Implement AI models on edge devices or cloud platforms to perform real-time analytics on remote-sensing data. 
+
+- By combining remote sensing with other IoT sensor data, AI models can generate valuable insights and enable automated decision-making for flood prediction, and floodplain zoning.
+
 
 ---
 ## Assessing flood damage
@@ -336,7 +385,7 @@ Under this circumstance, we decide to use night light and census data to evaluat
 ## Assessing flood damage
 ### Work flow
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="night/flow.png" alt="flow chart" width="90%" /&gt;
+&lt;img src="night/flow.png" alt="flow chart" width="100%" /&gt;
 &lt;p class="caption"&gt;flow chart&lt;/p&gt;
 &lt;/div&gt;
 
@@ -348,7 +397,7 @@ Under this circumstance, we decide to use night light and census data to evaluat
 
 * First, the NPP-VIIRS night-light remote sensing data were resampled to 500m × 500m based on the administrative map with image cropping, Albers projection and nearest neighbor interpolation, and the negative areas were assigned a value of 0. 
 
-* Using the statistical volume method of radiation normalization to reducing the impact of cloud cover on night-light remote sensing imagery .
+* Using the statistical volume method of radiation normalization to reducing the impact of cloud cover on night-light remote sensing imagery(He et al. 2022).
 ---
 ## Assessing flood damage
 ### Building model
@@ -401,6 +450,11 @@ Before we apply we model, we can estimate the number of people firstly by using 
 |&lt; 25% | Low    |
 
 ---
+## Assessing flood damage
+### Visulization
+&lt;img src="night/visu.jpg" width="100%" style="display: block; margin: auto auto auto 0;" /&gt;
+
+---
 class: inverse, center, middle
 # Project Management Overview 
 
@@ -409,7 +463,12 @@ class: inverse, center, middle
 &lt;p class="caption"&gt;flow chart&lt;/p&gt;
 &lt;/div&gt;
 ---
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 # Project Management Outline
+=======
+
+# Outline of Project Management 
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 293eb51efdc6b170d445d24f21a33c35a29cf2aa
 
 .pull-left[
 ### 1. Phases
@@ -550,14 +609,21 @@ Malaysia - Vulnerability | Climate Change Knowledge Portal (no date). Available 
 
 European Environment Agency (2016). Flood risks and environmental vulnerability. https://www.eea.europa.eu/publications/flood-risks-and-environmental-vulnerability
 
+Li, Z.; Liu, H.; Luo, C.; Fu, G. Assessing Surface Water Flood Risks in Urban Areas Using Machine Learning. Water 2021, 13, 3520. https://doi.org/10.3390/w13243520
+
 Demir, I., &amp; Krajewski, W. F. (2016). Towards an information system for the socially vulnerable groups during flood disasters. https://uiowa.edu/
-
-Environment Agency and Met Office (2015). Flood Forecasting Centre Five Year Review 2009-2014. https://www.gov.uk/government/publications/flood-forecasting-centre-5-year-review-2009-to-2014
-
-NASA Jet Propulsion Laboratory (2021). ARIA Project. https://aria.jpl.nasa.gov/
 
 ---
 ## References
+Environment Agency and Met Office (2015). Flood Forecasting Centre Five Year Review 2009-2014. https://www.gov.uk/government/publications/flood-forecasting-centre-5-year-review-2009-to-2014
+
+He, Yuanrong, Xiaorong Wang, Chunfang Chai, Deqing Yu, Yuanmao Zheng, and Dongkun Li. 2022. “Flood Damage Assessment and Visualization Based on NPP-VIIRS Nighttime Light Remote Sensing.” Journal of Natural Disaster, June, 13. https://doi.org/10.13577/j.jnd.2022.0309.
+
+NASA Jet Propulsion Laboratory (2021). ARIA Project. https://aria.jpl.nasa.gov/
+
+Tay, C.W.J., Yun, SH., Chin, S.T. et al. Rapid flood and damage mapping using synthetic aperture radar in response to Typhoon Hagibis, Japan. Sci Data 7, 100 (2020). https://doi.org/10.1038/s41597-020-0443-5'
+
+IOWA FLOOD INFORMATION SYSTEM. https://ifis.iowafloodcenter.org/ifis/
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

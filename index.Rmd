@@ -299,8 +299,16 @@ Accuracy, F-beta score, and receiver operating characteristic (ROC) curve, as we
 ---
 ## Flood prediction
 ### What do we mean by accuracy:
+<<<<<<< HEAD
 @
 ---class: inverse, center, middle
+=======
+```{r echo=FALSE, out.width='100%',fig.align='center',fig.cap=''}
+knitr::include_graphics('img/Prediction_Accuracy.png')
+```
+---
+class: inverse, center, middle
+>>>>>>> 293eb51efdc6b170d445d24f21a33c35a29cf2aa
 
 # Does Prediction Suffice?
 ---
@@ -336,6 +344,13 @@ References: - NASA Jet Propulsion Laboratory (2021). ARIA Project. https://aria.
 </small>
 </div>
 
+---
+
+```{r echo=FALSE, out.width='75%',fig.align='center',fig.cap='FPM comparison with GSI aerial and Planet optical imagery for Fukushima. Credit: https://doi.org/10.1038/s41597-020-0443-5'}
+
+knitr::include_graphics('img/SAR.webp')
+# Comparison of FPM covering the Fukushima prefecture with aerial imagery from GSI and modified optical imagery from Planet. The blue polygon indicates the SAR footprint and white rectangles indicate the extents of zoomed-in panels on the right. The FPM (12 Oct, UTC 20:43) shows agreement with aerial imagery (13 Oct, UTC 04:30) where open water floods over low-lying crop fields (1a,1b) and river banks (2a,2b), and floods from double bounce next to low-rise buildings (2a, 2b) were appropriately detected. The water bodies detected were also similar to those inferred from optical imagery (13 Oct, UTC 01:22) based on dark blue and cyan areas in the FCC of reflectance (3b) and blue areas in the NDWI (3c).
+```
 
 ---
 class: inverse, center, middle
@@ -354,6 +369,41 @@ class: inverse, center, middle
 | Prediction Based on Abundant information | Data-expensive | Edge computing and data compression reduce data costs |
 | Almost always generate outcome | Untimely | Real-time data enables timely predictions and responses |
 
+---
+## AIOT comes to aid
+Connect remote-sensing devices to the IoT network, enabling seamless data flow between devices, edge computing nodes, and cloud platforms. This integration can be achieved using communication protocols such as MQTT, LoRaWAN, or Zigbee.
+
+- Data Collection: IoT devices, such as water level sensors, soil moisture sensors, and weather stations, can supplement EO data and remote sensing information by providing real-time, hyperlocal data on environmental factors crucial for flood prediction.
+
+- Data Fusion: Combine IoT-generated data with EO data and remote sensing datasets, such as SAR imagery, to create a comprehensive, high-resolution input for ML-based flood prediction models. This fusion helps capture local variations and enhances overall model performance.
+
+- Model Calibration and Validation: IoT devices can provide continuous ground truth data for calibrating and validating ML-based flood prediction models, leading to more accurate and reliable predictions.
+
+- Adaptive Learning: Allows ML models to continuously learn from real-time data, adjusting and improving predictive capabilities over time. This adaptability is crucial for responding to changing environmental conditions and extreme weather events.
+
+---
+```{r echo=FALSE, out.width='100%',fig.align='center',fig.cap='Real-time water levels and stage heights with flood alert levels, and flood forecast'}
+knitr::include_graphics('img/Iowa_alert.png')
+```
+---
+class: inverse, center, middle
+# What else is possible?
+
+
+---
+##Outlook - Automated decision-making 
+```{r echo=FALSE, out.width='70%',fig.align='center',fig.cap='AIoT Architecture for auto-decision-making'}
+knitr::include_graphics('img/AIoT_workflow.png')
+```
+
+---
+##Outlook - Automated decision-making based on Real-time analytics
+Automated decision-making based on Real-time analytics: 
+
+- Implement AI models on edge devices or cloud platforms to perform real-time analytics on remote-sensing data. 
+
+- By combining remote sensing with other IoT sensor data, AI models can generate valuable insights and enable automated decision-making for flood prediction, and floodplain zoning.
+
 
 ---
 ## Assessing flood damage
@@ -364,7 +414,7 @@ Under this circumstance, we decide to use night light and census data to evaluat
 ---
 ## Assessing flood damage
 ### Work flow
-```{r echo=FALSE, out.width='90%',fig.align='center',fig.cap='flow chart'}
+```{r echo=FALSE, out.width='100%',fig.align='center',fig.cap='flow chart'}
 knitr::include_graphics('night/flow.png')
 ```
 
@@ -386,7 +436,7 @@ myBib <- ReadBib("./EarthSight.bib", check = FALSE)
 
 * First, the NPP-VIIRS night-light remote sensing data were resampled to 500m × 500m based on the administrative map with image cropping, Albers projection and nearest neighbor interpolation, and the negative areas were assigned a value of 0. 
 
-* Using the statistical volume method of radiation normalization to reducing the impact of cloud cover on night-light remote sensing imagery `r Citet(myBib, "heFloodDamageAssessment2022")`.
+* Using the statistical volume method of radiation normalization to reducing the impact of cloud cover on night-light remote sensing imagery(He et al. 2022).
 ---
 ## Assessing flood damage
 ### Building model
@@ -439,6 +489,13 @@ $R_{e}$ is the population of estimate, and $R_{s}$ is the ture value of populati
 |< 25% | Low    |
 
 ---
+## Assessing flood damage
+### Visulization
+```{r echo=FALSE, out.width='100%',fig.align='left'}
+knitr::include_graphics('night/visu.jpg')
+```
+
+---
 class: inverse, center, middle
 # Project Management Overview 
 
@@ -446,7 +503,12 @@ class: inverse, center, middle
 knitr::include_graphics('img/pm1.png')
 ```
 ---
+<<<<<<< HEAD
 # Project Management Outline
+=======
+
+# Outline of Project Management 
+>>>>>>> 293eb51efdc6b170d445d24f21a33c35a29cf2aa
 
 .pull-left[
 ### 1. Phases
@@ -605,11 +667,18 @@ Malaysia - Vulnerability | Climate Change Knowledge Portal (no date). Available 
 
 European Environment Agency (2016). Flood risks and environmental vulnerability. https://www.eea.europa.eu/publications/flood-risks-and-environmental-vulnerability
 
+Li, Z.; Liu, H.; Luo, C.; Fu, G. Assessing Surface Water Flood Risks in Urban Areas Using Machine Learning. Water 2021, 13, 3520. https://doi.org/10.3390/w13243520
+
 Demir, I., & Krajewski, W. F. (2016). Towards an information system for the socially vulnerable groups during flood disasters. https://uiowa.edu/
-
-Environment Agency and Met Office (2015). Flood Forecasting Centre Five Year Review 2009-2014. https://www.gov.uk/government/publications/flood-forecasting-centre-5-year-review-2009-to-2014
-
-NASA Jet Propulsion Laboratory (2021). ARIA Project. https://aria.jpl.nasa.gov/
 
 ---
 ## References
+Environment Agency and Met Office (2015). Flood Forecasting Centre Five Year Review 2009-2014. https://www.gov.uk/government/publications/flood-forecasting-centre-5-year-review-2009-to-2014
+
+He, Yuanrong, Xiaorong Wang, Chunfang Chai, Deqing Yu, Yuanmao Zheng, and Dongkun Li. 2022. “Flood Damage Assessment and Visualization Based on NPP-VIIRS Nighttime Light Remote Sensing.” Journal of Natural Disaster, June, 13. https://doi.org/10.13577/j.jnd.2022.0309.
+
+NASA Jet Propulsion Laboratory (2021). ARIA Project. https://aria.jpl.nasa.gov/
+
+Tay, C.W.J., Yun, SH., Chin, S.T. et al. Rapid flood and damage mapping using synthetic aperture radar in response to Typhoon Hagibis, Japan. Sci Data 7, 100 (2020). https://doi.org/10.1038/s41597-020-0443-5'
+
+IOWA FLOOD INFORMATION SYSTEM. https://ifis.iowafloodcenter.org/ifis/

@@ -4,7 +4,7 @@
     <title>Flood Risk Management Strategies for Kuala Lumpur, Malaysia</title>
     <meta charset="utf-8" />
     <meta name="author" content="Hansen Wiguna, Ahmad Farhan, Zirui Guo, Yao Wang, Tongmeng Xie" />
-    <script src="libs/header-attrs-2.20/header-attrs.js"></script>
+    <script src="libs/header-attrs-2.19/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
     <link rel="stylesheet" href="custom.css" type="text/css" />
   </head>
@@ -373,19 +373,37 @@ Automated decision-making based on Real-time analytics:
 - Implement AI models on edge devices or cloud platforms to perform real-time analytics on remote-sensing data. 
 
 - By combining remote sensing with other IoT sensor data, AI models can generate valuable insights and enable automated decision-making for flood prediction, and floodplain zoning.
-
-
+---
+class: inverse, center, middle
+# Assessing flood damage
 ---
 ## Assessing flood damage
 ### Overview
 Considering that Malaysia does not have enough datasets for analyzing, in this case, we need to make sure that the datasets that we owned can satisfy the methodology we select.  
 
 Under this circumstance, we decide to use night light and census data to evaluate the number of people affected. The process is divided into three major steps: data pre-processing, model building and assessment.
+
+.pull-left[
+&lt;img src="night/night.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+.small[
+[Night light image of KL. Source: GEE](https://earth.google.com/web/@3.06161352,101.91436214,253.81115254a,616076.51047044d,35y,0h,0t,0r/data=CiQSIhIgMGY3ZTJkYzdlOGExMTFlNjk5MGQ2ZjgxOGQ2OWE2ZTc)
+]
+]
+
 ---
 ## Assessing flood damage
 ### Work flow
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="night/flow.png" alt="flow chart" width="100%" /&gt;
+&lt;img src="night/nor.png" alt="flow chart" width="100%" /&gt;
+&lt;p class="caption"&gt;flow chart&lt;/p&gt;
+&lt;/div&gt;
+
+---
+## Assessing flood damage
+### Work flow
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="night/eva.png" alt="flow chart" width="100%" /&gt;
 &lt;p class="caption"&gt;flow chart&lt;/p&gt;
 &lt;/div&gt;
 
@@ -452,7 +470,17 @@ Before we apply we model, we can estimate the number of people firstly by using 
 ---
 ## Assessing flood damage
 ### Visulization
-&lt;img src="night/visu.jpg" width="100%" style="display: block; margin: auto auto auto 0;" /&gt;
+
+.pull-left[
+&lt;img src="night/visu1.jpg" width="100%" style="display: block; margin: auto auto auto 0;" /&gt;
+]
+
+.pull-right[
+&lt;img src="night/visu2.jpg" width="100%" style="display: block; margin: auto auto auto 0;" /&gt;
+]
+
+[Visualisation of the affected population and area in Guangxi](https://d-wanfangdata-com-cn.libproxy.ucl.ac.uk/periodical/zrzhxb202203009)
+
 
 ---
 class: inverse, center, middle
@@ -486,7 +514,7 @@ class: inverse, center, middle
 ---
 ## Project Management - Phases
 
-&lt;img src="img/Phases.jpeg" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/Phases.jpeg" width="2551" style="display: block; margin: auto;" /&gt;
 
 ---
 ## Project Management - Project Plan / Work Package (1)

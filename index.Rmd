@@ -403,19 +403,38 @@ Automated decision-making based on Real-time analytics:
 - Implement AI models on edge devices or cloud platforms to perform real-time analytics on remote-sensing data. 
 
 - By combining remote sensing with other IoT sensor data, AI models can generate valuable insights and enable automated decision-making for flood prediction, and floodplain zoning.
-
-
+---
+class: inverse, center, middle
+# Assessing flood damage
 ---
 ## Assessing flood damage
 ### Overview
 Considering that Malaysia does not have enough datasets for analyzing, in this case, we need to make sure that the datasets that we owned can satisfy the methodology we select.  
 
 Under this circumstance, we decide to use night light and census data to evaluate the number of people affected. The process is divided into three major steps: data pre-processing, model building and assessment.
+
+.pull-left[
+```{r echo=FALSE, out.width='90%',fig.align='center'}
+knitr::include_graphics('night/night.png')
+```
+
+.small[
+[Night light image of KL. Source: GEE](https://earth.google.com/web/@3.06161352,101.91436214,253.81115254a,616076.51047044d,35y,0h,0t,0r/data=CiQSIhIgMGY3ZTJkYzdlOGExMTFlNjk5MGQ2ZjgxOGQ2OWE2ZTc)
+]
+]
+
 ---
 ## Assessing flood damage
 ### Work flow
 ```{r echo=FALSE, out.width='100%',fig.align='center',fig.cap='flow chart'}
-knitr::include_graphics('night/flow.png')
+knitr::include_graphics('night/nor.png')
+```
+
+---
+## Assessing flood damage
+### Work flow
+```{r echo=FALSE, out.width='100%',fig.align='center',fig.cap='flow chart'}
+knitr::include_graphics('night/eva.png')
 ```
 
 ---
@@ -491,9 +510,21 @@ $R_{e}$ is the population of estimate, and $R_{s}$ is the ture value of populati
 ---
 ## Assessing flood damage
 ### Visulization
+
+.pull-left[
 ```{r echo=FALSE, out.width='100%',fig.align='left'}
-knitr::include_graphics('night/visu.jpg')
+knitr::include_graphics('night/visu1.jpg')
 ```
+]
+
+.pull-right[
+```{r echo=FALSE, out.width='100%',fig.align='left'}
+knitr::include_graphics('night/visu2.jpg')
+```
+]
+
+[Visualisation of the affected population and area in Guangxi](https://d-wanfangdata-com-cn.libproxy.ucl.ac.uk/periodical/zrzhxb202203009)
+
 
 ---
 class: inverse, center, middle

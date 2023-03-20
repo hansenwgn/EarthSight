@@ -392,7 +392,7 @@ Under this circumstance, we decide to use night light and census data to evaluat
 ---
 ## Assessing flood damage
 ### Work flow
-```{r echo=FALSE, out.width='90%',fig.align='center',fig.cap='flow chart'}
+```{r echo=FALSE, out.width='100%',fig.align='center',fig.cap='flow chart'}
 knitr::include_graphics('night/flow.png')
 ```
 
@@ -467,6 +467,13 @@ $R_{e}$ is the population of estimate, and $R_{s}$ is the ture value of populati
 |< 25% | Low    |
 
 ---
+## Assessing flood damage
+### Visulization
+```{r echo=FALSE, out.width='100%',fig.align='left'}
+knitr::include_graphics('night/visu.jpg')
+```
+
+---
 class: inverse, center, middle
 # Project Management Overview 
 
@@ -474,6 +481,7 @@ class: inverse, center, middle
 knitr::include_graphics('img/pm1.png')
 ```
 ---
+
 # Outline of Project Management 
 
 .pull-left[

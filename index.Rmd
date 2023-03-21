@@ -214,7 +214,7 @@ video_files <- list.files(video_path,
                          all.files = FALSE,
                          full.names = TRUE)
 ```
-<video style="display: block; margin-left: auto; margin-right: auto; width: auto; height: auto;" autoplay>
+<video width="1440" height="300" autoplay>
 <source src="vids/400SqMileWatershed.mpeg" type="video/mp4">
 </video>
 
@@ -232,56 +232,50 @@ DEM-based hydrological models
   - Planners: Floodplain zoning and land-use planning ( flood-resistant land uses, such as parks and recreational areas, to flood-prone regions.)
   - Emergency response teams can prioritise levees and floodwalls construction in certain areas
   - Design evacuation plans to minimise casualties
-```{r  include=FALSE}
-video_path  <- "vids/400SqMileWatershed.mpeg"
-video_files <- list.files(video_path,
-                         pattern = "\\.mp4$",
-                         recursive = TRUE,
-                         all.files = FALSE,
-                         full.names = TRUE)
+```{r echo=FALSE, out.width='25%',fig.align='center',fig.cap='A frame slice of Watershed Simulation, Credit: US Army Corps of Engineers, Hydrologic Engineering Center. (n.d.). <a href="https://www.hec.usace.army.mil/software/hec-ras/" target="_blank">HEC-RAS</a>.  https://doi.org/10.3390/w13243520 '}
+knitr::include_graphics('img/400SqMileWatershed - frame at 0m11s.jpg')
 ```
-<video width="1440" height="560" autoplay>
-<source src="vids/400SqMileWatershed.mpeg" type="video/mp4">
-</video>
-
-
-
-<div class="footnotes">
-<small>
-- Reference: US Army Corps of Engineers, Hydrologic Engineering Center. (n.d.). <a href="https://www.hec.usace.army.mil/software/hec-ras/" target="_blank">HEC-RAS</a>. 
-</small>
-</div>
 
 ---
 class: inverse, center, middle
-# Calling for a pipeline through the analysis
+# Calling for a pipeline
 
 ---
 
-### Persisting risks
-- Inflexibility in both time and space:
+### Persisting risks - Inflexibility in both time and space
 
-  - if we shift the area of interest,
+### If ——
+ - We shift the area of interest
   
-  - Or progress from, say, 2022 to 2023
+ - Or, Progress from, say, 2022 to 2023
 
- We have to redo watershed simulation with new data.
+--
+
+We have to redo watershed simulation with new data.
+
+--
+
+But we want to minimise avoidable repetitive human work, e.g., manual simulation of watershed for each date and each sub-zone of Kuala lumpur.
 
 --
 
 ### So how do we improve temporal and spatial transferability and build a data pipeline?
-### What about automation? 
 
+--
+
+### And what about automation? 
+
+ 
 ---
 ### Machine-learning based prediction - A blackbox considering numerous factors
 
 | Data Pipeline Step | Description |
 | --- | --- |
-| Data Collection | Collect geo-environmental data for Kuala Lumpur, including elevation, slope, soil type, substrate, land cover, NDVI, land use, imperviousness, distance to river, and distance to road |
-| Preprocessing | Standardize maps using QGIS: project into EPSG:3168 coordinate system, convert vector to raster maps, clip to Kuala Lumpur boundaries, resample to 1m resolution, and convert raster images to numerical data with 10m grid size using Rasterio |
-| Feature Selection | Perform multicollinearity diagnosis test to exclude similar features, reducing training time and computational power. Use features with VIF less than 10 in ANN models |
+| Data Acquirement | Object extraction of Multi-spetcral and Radar data for Kuala Lumpur -> Data fusion on object-based level -> Image classification to get elevation, slope, soil type, substrate, land cover, NDVI, land use, imperviousness, distance to river, and distance to road |
+| Pre-processing | Standardize with EPSG:3168 coordinate system -> convert vector to raster maps -> clip to Kuala Lumpur boundarie ->  resample to 1m resolution -> convert raster images to numerical data with 10m grid size using Rasterio |
+| Feature Selection | Perform multicollinearity diagnosis test to exclude similar features -> Use features with VIF less than 10 in ANN models |
 | Data Balancing | Balance data with oversampling and undersampling due to imbalanced flood risk distribution. Adjust non-flood areas (98%, 95%, 90% for 30-, 100-, and 1000-year events) and level 4 risk areas (0.01% and 0.06% for 30- and 100-year events) |
-| Model Selection & Assessment | Apply NB, perceptron, ANN, and CNN models for 30-, 100-, and 1000-year flood events. Evaluate performance using suitable metrics |
+| Model Selection & Assessment | Apply NB, perceptron, ANN, and CNN models for 30-, 100-, and 1000-year flood events. Evaluate performance using following metrics |
 ---
 ## Flood prediction
 ### Metrics
@@ -291,7 +285,7 @@ Accuracy, F-beta score, and receiver operating characteristic (ROC) curve, as we
 ## Flood prediction
 ### A comparison across models:
 
-```{r echo=FALSE, out.width='100%',fig.align='center',fig.cap=''}
+```{r echo=FALSE, out.width='100%',fig.align='center',fig.cap='Credit: Li Z, Liu H, Luo C, Fu G. Assessing Surface Water Flood Risks in Urban Areas Using Machine Learning. Water. 2021; 13(24):3520. https://doi.org/10.3390/w13243520 '}
 knitr::include_graphics('img/Prediction_Accuracy.png')
 ```
 
@@ -328,19 +322,30 @@ References: - European Environment Agency (2016). Flood risks and environmental 
 
 ---
 
-## Are information gaps "closed"? - dealing with probability
+## Are information gaps "closed"? - Managing probability
 
  ### What if ——
- somehow we neglected a 99%-likely flood location and instead sent all our response team to an 80%-likely flood location?
+ Due to a spatial mismatch between data scope and decision-making scope, we overlooked a location with a 99% chance of flooding and sent our response team to a place with only a 65% (what we consider to be the highest) likelihood of flooding.
  
-The emergency-handling strategy fails under this circumstance. 
+--
  
+In this scenario, the emergency response strategy fails. Therefore, keeping comprehensive data input and strategy output is essential.
+ 
+--
+
 ### The trikiness of dealing with probability
-  - Should we distribute resources in proportion to probability of flood ocurrence?
+
+--
+
+  - Should we allocate resources proportional to the probability of flood ocurrence?
+
+--
   
-  - Or should we design a hierarchy of response priority considering both likelihood and potential harm?
+  - Or, should we design a response priority hierarchy considering both likelihood and potential harm?
   
-  - A function? Human-added weights? Machine-learned weights?
+--
+
+  - Decide with a function design? Human-added weights? Machine-learned weights?
 
 
 ---
@@ -362,7 +367,7 @@ class: inverse, center, middle
 class: inverse, center, middle
 # Introducing Real-time Monitoring
 ---
-## Flood risk management - real-time monitoring
+## Flood risk management - Real-time monitoring
 ### Synthetic Aperture Radar (SAR)
 - SAR: Active remote sensing technology that can penetrate clouds, operate day or night, and provide high-resolution imagery1
 
@@ -383,7 +388,7 @@ References: - NASA Jet Propulsion Laboratory (2021). ARIA Project. https://aria.
 
 ---
 
-```{r echo=FALSE, out.width='75%',fig.align='center',fig.cap='FPM comparison with GSI aerial and Planet optical imagery for Fukushima. Credit: https://doi.org/10.1038/s41597-020-0443-5'}
+```{r echo=FALSE, out.width='73%',fig.align='center',fig.cap='FPM comparison with GSI aerial and Planet optical imagery for Fukushima. Credit: https://doi.org/10.1038/s41597-020-0443-5'}
 
 knitr::include_graphics('img/SAR.webp')
 # Comparison of FPM covering the Fukushima prefecture with aerial imagery from GSI and modified optical imagery from Planet. The blue polygon indicates the SAR footprint and white rectangles indicate the extents of zoomed-in panels on the right. The FPM (12 Oct, UTC 20:43) shows agreement with aerial imagery (13 Oct, UTC 04:30) where open water floods over low-lying crop fields (1a,1b) and river banks (2a,2b), and floods from double bounce next to low-rise buildings (2a, 2b) were appropriately detected. The water bodies detected were also similar to those inferred from optical imagery (13 Oct, UTC 01:22) based on dark blue and cyan areas in the FCC of reflectance (3b) and blue areas in the NDWI (3c).
@@ -391,24 +396,27 @@ knitr::include_graphics('img/SAR.webp')
 
 
 ---
-## Risks of Real-time monitoring 
+## Risks of Real-time Monitoring 
 
  - ### How real-time is real time? 
   - Does a 5-seconds delay in data transmission fail an essential decision-making? 
   
- - ### How to quantify tolerance thresholds in regards of delay, error and bias?
+--
 
- - ### Accuracy management in estimating response time consumed by 
-  - Data collection
-  - Data transmission
-  - Calculation
+ - ### How to quantify tolerance thresholds in regards of delay, error and bias?
+  - A sharp cutoff or a fuzzy one?
+
+--
+
+ - ### Should manage accuracy when estimating response time of
+  - Data acquirement, transmission and calculation
   - Human-based decision-making.
   
   ### Incurs extra cost and the result is almost always NOT deterministic.
 
 ---
 class: inverse, center, middle
-# When AIoT comes in
+# When AIoT Comes In
 
 ---
 ## AIoT comes to aid
@@ -425,12 +433,12 @@ class: inverse, center, middle
 
 ---
 ## AIoT comes to aid
-Connect remote-sensing devices to the IoT network, enabling seamless data flow between
+Connects remote-sensing devices to the IoT network, enabling seamless data flow between
  - Devices
  - Edge computing nodes
  - Cloud platforms
  
-Using communication protocols such as MQTT, LoRaWAN, or Zigbee.
+(Supprted by communication protocols such as MQTT, LoRaWAN, or Zigbee)
 
 --
 
@@ -464,7 +472,7 @@ Adaptive Learning models adjust and improve predictive capabilities over time, a
  - Extreme weather events
 
 ---
-```{r echo=FALSE, out.width='100%',fig.align='center',fig.cap='Real-time water levels and stage heights with flood alert levels, and flood forecast'}
+```{r echo=FALSE, out.width='100%',fig.align='center',fig.cap='Real-time water levels and stage heights with flood alert levels, and flood forecast. Credit: https://ifis.iowafloodcenter.org/ifis/'}
 knitr::include_graphics('img/Iowa_alert.png')
 ```
 ---
@@ -480,11 +488,27 @@ knitr::include_graphics('img/AIoT_workflow.png')
 
 ---
 ##Outlook - Automated decision-making based on Real-time analytics
-Automated decision-making based on Real-time analytics: 
 
-- Implement AI models on edge devices or cloud platforms to perform real-time analytics on remote-sensing data. 
+- Edge devices take in real-world data -> 
 
-- By combining remote sensing with other IoT sensor data, AI models can generate valuable insights and enable automated decision-making for flood prediction, and floodplain zoning.
+- Edge computation nodes share computation tasks (pre-processing, training, validation, etc.) in parallel -> 
+
+- Predictions generated by models are compared through and integrated at decision centre / A ensemble model is given -> 
+
+- Strategy coping with status quo is auto-generated  
+
+--
+
+Vulnerable in that the system is very hackable (Data input, analysis, strategy output are all handled by AI):
+
+- What if the edge devices in a crucial area goes offline?
+
+- How to make sure the ensemble always weight towards maximum survival of people?
+
+--
+
+We emphasise the disaster awareness of human being: **All final decisions require expert review and human approval**. So the solution network can be scalable, elastic to damage, and serves the public's well-being correctly.
+
 ---
 class: inverse, center, middle
 # Assessing flood damage
@@ -804,6 +828,6 @@ NASA Jet Propulsion Laboratory (2021). ARIA Project. https://aria.jpl.nasa.gov/
 
 Tay, C.W.J., Yun, SH., Chin, S.T. et al. Rapid flood and damage mapping using synthetic aperture radar in response to Typhoon Hagibis, Japan. Sci Data 7, 100 (2020). https://doi.org/10.1038/s41597-020-0443-5'
 
-ZHA0 N，LIU Y，Hsu F C，et a1．Time series analysis of VIIRS—DNB nighttime 1ights imagery for change detection in urban areas：A case study of devastation in Puerto Rico f而m hurricanes I瑚a and Maria[J]．Applied Geogr印hy，2020，120(1)：102222
+ZHA0 N，LIU Y，Hsu F C，et a1．Time series analysis of VIIRS—DNB nighttime 1ights imagery for change detection in urban areas：A case study of devastation in Puerto Rico f而m hurricanes I瑚a and Maria[J]．Applied Geograhy，2020，120(1)：102222
 
 

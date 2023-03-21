@@ -299,16 +299,13 @@ Accuracy, F-beta score, and receiver operating characteristic (ROC) curve, as we
 ---
 ## Flood prediction
 ### What do we mean by accuracy:
-<<<<<<< HEAD
-@
----class: inverse, center, middle
-=======
+
 ```{r echo=FALSE, out.width='100%',fig.align='center',fig.cap=''}
 knitr::include_graphics('img/Prediction_Accuracy.png')
 ```
 ---
 class: inverse, center, middle
->>>>>>> 293eb51efdc6b170d445d24f21a33c35a29cf2aa
+
 
 # Does Prediction Suffice?
 ---
@@ -538,12 +535,7 @@ class: inverse, center, middle
 knitr::include_graphics('img/pm1.png')
 ```
 ---
-<<<<<<< HEAD
 # Project Management Outline
-=======
-
-# Outline of Project Management 
->>>>>>> 293eb51efdc6b170d445d24f21a33c35a29cf2aa
 
 .pull-left[
 ### 1. Phases
@@ -626,7 +618,7 @@ knitr::include_graphics('img/risk.png')
 ---
 ## Project Management - Timeline
 ```{r echo=FALSE, out.width='100%', fig.align='center'}
-knitr::include_graphics('img/gantt1.jpg')
+knitr::include_graphics('img/gantt2.jpeg')
 ```
 
 ---
@@ -696,24 +688,35 @@ From reactive to a more proactive approach by developing a prediction model, ass
 ]
 ---
 ## References
+
+Aslam Perwaiz et al. (2020) ‘Disaster Risk Reduction in Malaysia: Status report 2020’. United Nations Office for Disaster Risk Reduction - Regional Office for Asia and Pacific Asian Disaster Preparedness Center.
+
 ‘CHA-Malaysia.pdf’ (no date). Available at: https://jfit-for-science.asia/wp-content/uploads/2019/11/CHA-Malaysia.pdf (Accessed: 19 March 2023).
 
-Malaysia - Vulnerability | Climate Change Knowledge Portal (no date). Available at: https://climateknowledgeportal.worldbank.org/country/malaysia/vulnerability (Accessed: 23 February 2023).
-
-European Environment Agency (2016). Flood risks and environmental vulnerability. https://www.eea.europa.eu/publications/flood-risks-and-environmental-vulnerability
-
-Li, Z.; Liu, H.; Luo, C.; Fu, G. Assessing Surface Water Flood Risks in Urban Areas Using Machine Learning. Water 2021, 13, 3520. https://doi.org/10.3390/w13243520
+Country: Malaysia (2023). Available at: 
+https://www.adrc.asia/management/MYS/mechanism_of_disaster_management_and_relief.html (Accessed: 20 March 2023).
 
 Demir, I., & Krajewski, W. F. (2016). Towards an information system for the socially vulnerable groups during flood disasters. https://uiowa.edu/
 
----
-## References
 Environment Agency and Met Office (2015). Flood Forecasting Centre Five Year Review 2009-2014. https://www.gov.uk/government/publications/flood-forecasting-centre-5-year-review-2009-to-2014
 
+European Environment Agency (2016). Flood risks and environmental vulnerability. https://www.eea.europa.eu/publications/flood-risks-and-environmental-vulnerability
+
+---
+## References
+
 He, Yuanrong, Xiaorong Wang, Chunfang Chai, Deqing Yu, Yuanmao Zheng, and Dongkun Li. 2022. “Flood Damage Assessment and Visualization Based on NPP-VIIRS Nighttime Light Remote Sensing.” Journal of Natural Disaster, June, 13. https://doi.org/10.13577/j.jnd.2022.0309.
+
+IOWA FLOOD INFORMATION SYSTEM. https://ifis.iowafloodcenter.org/ifis/
+
+Li, Z.; Liu, H.; Luo, C.; Fu, G. Assessing Surface Water Flood Risks in Urban Areas Using Machine Learning. Water 2021, 13, 3520. https://doi.org/10.3390/w13243520
+
+‘Malaysia: Disaster Management Reference Handbook (June 2019)’ (2019). Center for Excellence in Disaster Management and Humanitarian Assistance.
+
+Malaysia - Vulnerability | Climate Change Knowledge Portal (no date). Available at: https://climateknowledgeportal.worldbank.org/country/malaysia/vulnerability (Accessed: 23 February 2023).
 
 NASA Jet Propulsion Laboratory (2021). ARIA Project. https://aria.jpl.nasa.gov/
 
 Tay, C.W.J., Yun, SH., Chin, S.T. et al. Rapid flood and damage mapping using synthetic aperture radar in response to Typhoon Hagibis, Japan. Sci Data 7, 100 (2020). https://doi.org/10.1038/s41597-020-0443-5'
 
-IOWA FLOOD INFORMATION SYSTEM. https://ifis.iowafloodcenter.org/ifis/
+

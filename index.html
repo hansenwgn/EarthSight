@@ -4,7 +4,7 @@
     <title>Flood Risk Management Strategies for Kuala Lumpur, Malaysia</title>
     <meta charset="utf-8" />
     <meta name="author" content="Hansen Wiguna, Ahmad Farhan, Zirui Guo, Yao Wang, Tongmeng Xie" />
-    <script src="libs/header-attrs-2.19/header-attrs.js"></script>
+    <script src="libs/header-attrs-2.18/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
     <link rel="stylesheet" href="custom.css" type="text/css" />
   </head>
@@ -224,7 +224,40 @@ DEM-based hydrological models
 &lt;/div&gt;
 
 ---
+class: inverse, center, middle
+# The data calls for a pipeline through the analysis
 
+---
+
+### Persisting risks
+Inflexibility in both time and space:
+  - if we want to shift the location of area of interest, or, say,
+  - progress from 2022 to 2023
+
+We have to redo the whole watershed simulation with new data 
+
+So how do we improve temporal and spatial transferability and build a data pipeline? Even achieve automation? 
+
+---
+### Machine-learning based prediction - A blackbox considering numerous factors
+
+| Data Pipeline Step | Description |
+| --- | --- |
+| Data Collection | Collect geo-environmental data for Kuala Lumpur, including elevation, slope, soil type, substrate, land cover, NDVI, land use, imperviousness, distance to river, and distance to road |
+| Preprocessing | Standardize maps using QGIS: project into EPSG:3168 coordinate system, convert vector to raster maps, clip to Kuala Lumpur boundaries, resample to 1m resolution, and convert raster images to numerical data with 10m grid size using Rasterio |
+| Feature Selection | Perform multicollinearity diagnosis test to exclude similar features, reducing training time and computational power. Use features with VIF less than 10 in ANN models |
+| Data Balancing | Balance data with oversampling and undersampling due to imbalanced flood risk distribution. Adjust non-flood areas (98%, 95%, 90% for 30-, 100-, and 1000-year events) and level 4 risk areas (0.01% and 0.06% for 30- and 100-year events) |
+| Model Selection &amp; Assessment | Apply NB, perceptron, ANN, and CNN models for 30-, 100-, and 1000-year flood events. Evaluate performance using suitable metrics |
+---
+## Flood prediction
+### Metrics
+Accuracy, F-beta score, and receiver operating characteristic (ROC) curve, as well as the oversampling and undersampling techniques used to address the issue of data imbalance. 
+
+---
+## Flood prediction
+### A comparison across models:
+
+&lt;img src="img/Prediction_Accuracy.png" width="100%" style="display: block; margin: auto;" /&gt;
 
 ---
 class: inverse, middle
@@ -258,24 +291,19 @@ References: - European Environment Agency (2016). Flood risks and environmental 
 &lt;/div&gt;
 
 ---
-### Machine-learning based prediction - A blackbox considering numerous factors
 
-| Data Pipeline Step | Description |
-| --- | --- |
-| Data Collection | Collect geo-environmental data for Kuala Lumpur, including elevation, slope, soil type, substrate, land cover, NDVI, land use, imperviousness, distance to river, and distance to road |
-| Preprocessing | Standardize maps using QGIS: project into EPSG:3168 coordinate system, convert vector to raster maps, clip to Kuala Lumpur boundaries, resample to 1m resolution, and convert raster images to numerical data with 10m grid size using Rasterio |
-| Feature Selection | Perform multicollinearity diagnosis test to exclude similar features, reducing training time and computational power. Use features with VIF less than 10 in ANN models |
-| Data Balancing | Balance data with oversampling and undersampling due to imbalanced flood risk distribution. Adjust non-flood areas (98%, 95%, 90% for 30-, 100-, and 1000-year events) and level 4 risk areas (0.01% and 0.06% for 30- and 100-year events) |
-| Model Selection &amp; Assessment | Apply NB, perceptron, ANN, and CNN models for 30-, 100-, and 1000-year flood events. Evaluate performance using suitable metrics |
----
-## Flood prediction
-### Metrics
-Accuracy, F-beta score, and receiver operating characteristic (ROC) curve, as well as the oversampling and undersampling techniques used to address the issue of data imbalance. 
----
-## Flood prediction
-### What do we mean by accuracy:
+## Are information gaps "closed"? - dealing with probability
 
-&lt;img src="img/Prediction_Accuracy.png" width="100%" style="display: block; margin: auto;" /&gt;
+ - What if somehow we neglected a 99%-likely flood location and instead sent all our response team to an 80%-likely flood location?
+ 
+The emergency-handling strategy fails under this circumstance. 
+ 
+ - The trikiness of dealing with probability
+  - Should we distribute resources in proportion to probability of flood ocurrence?
+  - Or should we design a hierarchy of priority of response considering both likelihood and potential harm?
+  - A function? Human-added weights? Machine-learned weights?
+
+
 ---
 class: inverse, center, middle
 
@@ -320,6 +348,16 @@ References: - NASA Jet Propulsion Laboratory (2021). ARIA Project. https://aria.
 &lt;img src="img/SAR.webp" alt="FPM comparison with GSI aerial and Planet optical imagery for Fukushima. Credit: https://doi.org/10.1038/s41597-020-0443-5" width="75%" /&gt;
 &lt;p class="caption"&gt;FPM comparison with GSI aerial and Planet optical imagery for Fukushima. Credit: https://doi.org/10.1038/s41597-020-0443-5&lt;/p&gt;
 &lt;/div&gt;
+
+
+---
+## Risks of Real-time flood monitoring 
+
+ - How real-time is real time? Does a 5-seconds delay in data transmission inflict an unrecoverable loss? 
+  
+ - How to quantify those tolerance thresholds?
+
+ - Accuracy in estimating response time consumed by data collection, data transmission, calculation, human-based decision-making needs management, which incurs extra cost and is the result almost NOT deterministic.
 
 ---
 class: inverse, center, middle
@@ -408,7 +446,7 @@ Under this circumstance, we decide to use night light and census data to evaluat
 
 * First, the NPP-VIIRS night-light remote sensing data were resampled to 500m × 500m based on the administrative map with image cropping, Albers projection and nearest neighbor interpolation, and the negative areas were assigned a value of 0. 
 
-* Using the statistical volume method of radiation normalization to reducing the impact of cloud cover on night-light remote sensing imagery(He et al. 2022).
+* Using the statistical volume method of radiation normalization to reducing the impact of cloud cover on night-light remote sensing imagery(Zhao et al. 2020).
 
 
 
@@ -425,7 +463,7 @@ Under this circumstance, we decide to use night light and census data to evaluat
 ## Assessing flood damage
 ### Building model
 
-Light index can indicate the dynamics population and economic development. To be specific, light density can represent the density of population, light area can represent the distribution of population, the tendency of urban expansion .
+Light index can indicate the dynamics population and economic development. To be specific, light density can represent the density of population, light area can represent the distribution of population, the tendency of urban expansion(He et al. 2022).
 
 ---
 ## Assessing flood damage
@@ -442,7 +480,7 @@ In the formula, `\(LD\)` is the average of light density, `\(LA\)` is the area o
 
 `$$P_{E}=\rho_{e} \times A_{e}$$` 
 
-`\(P_{E}\)` is the total affected population; `\(rho_{e}\)` is the population density of the affected area; `\(A_{e}\)` is the affected area.
+`\(P_{E}\)` is the total affected population; `\(\rho_{e}\)` is the population density of the affected area; `\(A_{e}\)` is the affected area.
 
 ---
 ## Assessing flood damage
@@ -514,7 +552,7 @@ class: inverse, center, middle
 ---
 ## Project Management - Phases
 
-&lt;img src="img/Phases.jpeg" width="2551" style="display: block; margin: auto;" /&gt;
+&lt;img src="img/Phases.jpeg" style="display: block; margin: auto;" /&gt;
 
 ---
 ## Project Management - Project Plan / Work Package (1)
@@ -661,6 +699,8 @@ Malaysia - Vulnerability | Climate Change Knowledge Portal (no date). Available 
 NASA Jet Propulsion Laboratory (2021). ARIA Project. https://aria.jpl.nasa.gov/
 
 Tay, C.W.J., Yun, SH., Chin, S.T. et al. Rapid flood and damage mapping using synthetic aperture radar in response to Typhoon Hagibis, Japan. Sci Data 7, 100 (2020). https://doi.org/10.1038/s41597-020-0443-5'
+
+ZHA0 N，LIU Y，Hsu F C，et a1．Time series analysis of VIIRS—DNB nighttime 1ights imagery for change detection in urban areas：A case study of devastation in Puerto Rico f而m hurricanes I瑚a and Maria[J]．Applied Geogr印hy，2020，120(1)：102222
 
 
     </textarea>

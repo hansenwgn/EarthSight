@@ -253,7 +253,42 @@ video_files <- list.files(video_path,
 </div>
 
 ---
+class: inverse, center, middle
+# The data calls for a pipeline through the analysis
 
+---
+
+### Persisting risks
+Inflexibility in both time and space:
+  - if we want to shift the location of area of interest, or, say,
+  - progress from 2022 to 2023
+
+We have to redo the whole watershed simulation with new data 
+
+So how do we improve temporal and spatial transferability and build a data pipeline? Even achieve automation? 
+
+---
+### Machine-learning based prediction - A blackbox considering numerous factors
+
+| Data Pipeline Step | Description |
+| --- | --- |
+| Data Collection | Collect geo-environmental data for Kuala Lumpur, including elevation, slope, soil type, substrate, land cover, NDVI, land use, imperviousness, distance to river, and distance to road |
+| Preprocessing | Standardize maps using QGIS: project into EPSG:3168 coordinate system, convert vector to raster maps, clip to Kuala Lumpur boundaries, resample to 1m resolution, and convert raster images to numerical data with 10m grid size using Rasterio |
+| Feature Selection | Perform multicollinearity diagnosis test to exclude similar features, reducing training time and computational power. Use features with VIF less than 10 in ANN models |
+| Data Balancing | Balance data with oversampling and undersampling due to imbalanced flood risk distribution. Adjust non-flood areas (98%, 95%, 90% for 30-, 100-, and 1000-year events) and level 4 risk areas (0.01% and 0.06% for 30- and 100-year events) |
+| Model Selection & Assessment | Apply NB, perceptron, ANN, and CNN models for 30-, 100-, and 1000-year flood events. Evaluate performance using suitable metrics |
+---
+## Flood prediction
+### Metrics
+Accuracy, F-beta score, and receiver operating characteristic (ROC) curve, as well as the oversampling and undersampling techniques used to address the issue of data imbalance. 
+
+---
+## Flood prediction
+### A comparison across models:
+
+```{r echo=FALSE, out.width='100%',fig.align='center',fig.cap=''}
+knitr::include_graphics('img/Prediction_Accuracy.png')
+```
 
 ---
 class: inverse, middle
@@ -287,26 +322,19 @@ References: - European Environment Agency (2016). Flood risks and environmental 
 </div>
 
 ---
-### Machine-learning based prediction - A blackbox considering numerous factors
 
-| Data Pipeline Step | Description |
-| --- | --- |
-| Data Collection | Collect geo-environmental data for Kuala Lumpur, including elevation, slope, soil type, substrate, land cover, NDVI, land use, imperviousness, distance to river, and distance to road |
-| Preprocessing | Standardize maps using QGIS: project into EPSG:3168 coordinate system, convert vector to raster maps, clip to Kuala Lumpur boundaries, resample to 1m resolution, and convert raster images to numerical data with 10m grid size using Rasterio |
-| Feature Selection | Perform multicollinearity diagnosis test to exclude similar features, reducing training time and computational power. Use features with VIF less than 10 in ANN models |
-| Data Balancing | Balance data with oversampling and undersampling due to imbalanced flood risk distribution. Adjust non-flood areas (98%, 95%, 90% for 30-, 100-, and 1000-year events) and level 4 risk areas (0.01% and 0.06% for 30- and 100-year events) |
-| Model Selection & Assessment | Apply NB, perceptron, ANN, and CNN models for 30-, 100-, and 1000-year flood events. Evaluate performance using suitable metrics |
----
-## Flood prediction
-### Metrics
-Accuracy, F-beta score, and receiver operating characteristic (ROC) curve, as well as the oversampling and undersampling techniques used to address the issue of data imbalance. 
----
-## Flood prediction
-### What do we mean by accuracy:
+## Are information gaps "closed"? - dealing with probability
 
-```{r echo=FALSE, out.width='100%',fig.align='center',fig.cap=''}
-knitr::include_graphics('img/Prediction_Accuracy.png')
-```
+ - What if somehow we neglected a 99%-likely flood location and instead sent all our response team to an 80%-likely flood location?
+ 
+The emergency-handling strategy fails under this circumstance. 
+ 
+ - The trikiness of dealing with probability
+  - Should we distribute resources in proportion to probability of flood ocurrence?
+  - Or should we design a hierarchy of priority of response considering both likelihood and potential harm?
+  - A function? Human-added weights? Machine-learned weights?
+
+
 ---
 class: inverse, center, middle
 
@@ -352,6 +380,16 @@ References: - NASA Jet Propulsion Laboratory (2021). ARIA Project. https://aria.
 knitr::include_graphics('img/SAR.webp')
 # Comparison of FPM covering the Fukushima prefecture with aerial imagery from GSI and modified optical imagery from Planet. The blue polygon indicates the SAR footprint and white rectangles indicate the extents of zoomed-in panels on the right. The FPM (12 Oct, UTC 20:43) shows agreement with aerial imagery (13 Oct, UTC 04:30) where open water floods over low-lying crop fields (1a,1b) and river banks (2a,2b), and floods from double bounce next to low-rise buildings (2a, 2b) were appropriately detected. The water bodies detected were also similar to those inferred from optical imagery (13 Oct, UTC 01:22) based on dark blue and cyan areas in the FCC of reflectance (3b) and blue areas in the NDWI (3c).
 ```
+
+
+---
+## Risks of Real-time flood monitoring 
+
+ - How real-time is real time? Does a 5-seconds delay in data transmission inflict an unrecoverable loss? 
+  
+ - How to quantify those tolerance thresholds?
+
+ - Accuracy in estimating response time consumed by data collection, data transmission, calculation, human-based decision-making needs management, which incurs extra cost and is the result almost NOT deterministic.
 
 ---
 class: inverse, center, middle

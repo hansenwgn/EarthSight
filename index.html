@@ -25,7 +25,7 @@ class: center, middle, inverse, title-slide
 ### University College London
 ]
 .date[
-### 2023/02/23 (updated: 2023-03-20)
+### 2023/02/23 (updated: 2023-03-21)
 ]
 
 ---
@@ -401,14 +401,6 @@ Under this circumstance, we decide to use night light and census data to evaluat
 
 ---
 ## Assessing flood damage
-### Work flow
-&lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="night/eva.png" alt="flow chart" width="100%" /&gt;
-&lt;p class="caption"&gt;flow chart&lt;/p&gt;
-&lt;/div&gt;
-
----
-## Assessing flood damage
 ### Data pre-processing
 
 
@@ -416,6 +408,18 @@ Under this circumstance, we decide to use night light and census data to evaluat
 * First, the NPP-VIIRS night-light remote sensing data were resampled to 500m × 500m based on the administrative map with image cropping, Albers projection and nearest neighbor interpolation, and the negative areas were assigned a value of 0. 
 
 * Using the statistical volume method of radiation normalization to reducing the impact of cloud cover on night-light remote sensing imagery(He et al. 2022).
+
+
+
+---
+## Assessing flood damage
+### Work flow
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="night/eva.png" alt="flow chart" width="100%" /&gt;
+&lt;p class="caption"&gt;flow chart&lt;/p&gt;
+&lt;/div&gt;
+
+
 ---
 ## Assessing flood damage
 ### Building model

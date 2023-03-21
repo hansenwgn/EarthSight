@@ -478,7 +478,7 @@ $y$ is population related parameters, $R_{VIIRS}$ is NPP-VIIRS night light brigh
 
 $$P_{E}=\rho_{e} \times A_{e}$$ 
 
-$P_{E}$ is the total affected population; $rho_{e}$ is the population density of the affected area; $A_{e}$ is the affected area.
+$P_{E}$ is the total affected population; $\rho_{e}$ is the population density of the affected area; $A_{e}$ is the affected area.
 
 ---
 ## Assessing flood damage

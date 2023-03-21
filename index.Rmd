@@ -254,18 +254,23 @@ video_files <- list.files(video_path,
 
 ---
 class: inverse, center, middle
-# The data calls for a pipeline through the analysis
+# Calling for a pipeline through the analysis
 
 ---
 
 ### Persisting risks
-Inflexibility in both time and space:
-  - if we want to shift the location of area of interest, or, say,
-  - progress from 2022 to 2023
+- Inflexibility in both time and space:
 
-We have to redo the whole watershed simulation with new data 
+  - if we shift the area of interest,
+  
+  - Or progress from, say, 2022 to 2023
 
-So how do we improve temporal and spatial transferability and build a data pipeline? Even achieve automation? 
+ We have to redo watershed simulation with new data.
+
+--
+
+### So how do we improve temporal and spatial transferability and build a data pipeline?
+### What about automation? 
 
 ---
 ### Machine-learning based prediction - A blackbox considering numerous factors
@@ -297,9 +302,9 @@ class: inverse, middle
 
 - ### How are information gaps closed
 
-- ### How are losses prevented
+- ### How are loss prevented
 
-- ### Identifying persisting risks
+- ### Identify persisting risks
 
   
 ---
@@ -325,13 +330,16 @@ References: - European Environment Agency (2016). Flood risks and environmental 
 
 ## Are information gaps "closed"? - dealing with probability
 
- - What if somehow we neglected a 99%-likely flood location and instead sent all our response team to an 80%-likely flood location?
+ ### What if ——
+ somehow we neglected a 99%-likely flood location and instead sent all our response team to an 80%-likely flood location?
  
 The emergency-handling strategy fails under this circumstance. 
  
- - The trikiness of dealing with probability
+### The trikiness of dealing with probability
   - Should we distribute resources in proportion to probability of flood ocurrence?
-  - Or should we design a hierarchy of priority of response considering both likelihood and potential harm?
+  
+  - Or should we design a hierarchy of response priority considering both likelihood and potential harm?
+  
   - A function? Human-added weights? Machine-learned weights?
 
 
@@ -355,7 +363,7 @@ class: inverse, center, middle
 # Introducing Real-time Monitoring
 ---
 ## Flood risk management - real-time monitoring
-### Synthetic Aperture Radar (SAR) for flood monitoring
+### Synthetic Aperture Radar (SAR)
 - SAR: Active remote sensing technology that can penetrate clouds, operate day or night, and provide high-resolution imagery1
 
 - Real-time flood monitoring: Timely and accurate information on flood extent, duration, and impact for emergency response and management
@@ -383,13 +391,20 @@ knitr::include_graphics('img/SAR.webp')
 
 
 ---
-## Risks of Real-time flood monitoring 
+## Risks of Real-time monitoring 
 
- - How real-time is real time? Does a 5-seconds delay in data transmission inflict an unrecoverable loss? 
+ - ### How real-time is real time? 
+  - Does a 5-seconds delay in data transmission fail an essential decision-making? 
   
- - How to quantify those tolerance thresholds?
+ - ### How to quantify tolerance thresholds in regards of delay, error and bias?
 
- - Accuracy in estimating response time consumed by data collection, data transmission, calculation, human-based decision-making needs management, which incurs extra cost and is the result almost NOT deterministic.
+ - ### Accuracy management in estimating response time consumed by 
+  - Data collection
+  - Data transmission
+  - Calculation
+  - Human-based decision-making.
+  
+  ### Incurs extra cost and the result is almost always NOT deterministic.
 
 ---
 class: inverse, center, middle
@@ -409,16 +424,44 @@ class: inverse, center, middle
 | Almost always generate outcome | Untimely | Real-time data enables timely predictions and responses |
 
 ---
-## AIOT comes to aid
-Connect remote-sensing devices to the IoT network, enabling seamless data flow between devices, edge computing nodes, and cloud platforms. This integration can be achieved using communication protocols such as MQTT, LoRaWAN, or Zigbee.
+## AIoT comes to aid
+Connect remote-sensing devices to the IoT network, enabling seamless data flow between
+ - Devices
+ - Edge computing nodes
+ - Cloud platforms
+ 
+Using communication protocols such as MQTT, LoRaWAN, or Zigbee.
 
-- Data Collection: IoT devices, such as water level sensors, soil moisture sensors, and weather stations, can supplement EO data and remote sensing information by providing real-time, hyperlocal data on environmental factors crucial for flood prediction.
+--
 
-- Data Fusion: Combine IoT-generated data with EO data and remote sensing datasets, such as SAR imagery, to create a comprehensive, high-resolution input for ML-based flood prediction models. This fusion helps capture local variations and enhances overall model performance.
+- To supplement EO data with real-time, hyperlocal data collected from IoT devices:
+ - Water level sensors
+ - Soil moisture sensors
+ - Weather stations
 
-- Model Calibration and Validation: IoT devices can provide continuous ground truth data for calibrating and validating ML-based flood prediction models, leading to more accurate and reliable predictions.
+- To help capture local variations and enhances overall model performance, perform data fusion, i.e., combine:
+  - IoT-generated data
+  - EO data 
+  - SAR imagery and other remote sensing datasets
 
-- Adaptive Learning: Allows ML models to continuously learn from real-time data, adjusting and improving predictive capabilities over time. This adaptability is crucial for responding to changing environmental conditions and extreme weather events.
+---
+## AIoT comes to aid
+### Automatical iteration of models:
+
+ 
+
+
+With ground truth data continuously provided by IoT devices, models are evaluated and calibrated by:
+
+ - Real-time ground truth data input from nature
+ 
+ - Feedbacks from decision-making centre and human 
+  
+Adaptive Learning models adjust and improve predictive capabilities over time, allowing for responding to
+
+ - Changing environmental conditions 
+ 
+ - Extreme weather events
 
 ---
 ```{r echo=FALSE, out.width='100%',fig.align='center',fig.cap='Real-time water levels and stage heights with flood alert levels, and flood forecast'}

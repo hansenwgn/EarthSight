@@ -445,7 +445,7 @@ myBib <- ReadBib("./EarthSight.bib", check = FALSE)
 
 * First, the NPP-VIIRS night-light remote sensing data were resampled to 500m × 500m based on the administrative map with image cropping, Albers projection and nearest neighbor interpolation, and the negative areas were assigned a value of 0. 
 
-* Using the statistical volume method of radiation normalization to reducing the impact of cloud cover on night-light remote sensing imagery(He et al. 2022).
+* Using the statistical volume method of radiation normalization to reducing the impact of cloud cover on night-light remote sensing imagery(Zhao et al. 2020).
 
 
 
@@ -461,7 +461,7 @@ knitr::include_graphics('night/eva.png')
 ## Assessing flood damage
 ### Building model
 
-Light index can indicate the dynamics population and economic development. To be specific, light density can represent the density of population, light area can represent the distribution of population, the tendency of urban expansion `r Citet(myBib, "heFloodDamageAssessment2022")`.
+Light index can indicate the dynamics population and economic development. To be specific, light density can represent the density of population, light area can represent the distribution of population, the tendency of urban expansion(He et al. 2022).
 
 ---
 ## Assessing flood damage
@@ -718,5 +718,7 @@ Malaysia - Vulnerability | Climate Change Knowledge Portal (no date). Available 
 NASA Jet Propulsion Laboratory (2021). ARIA Project. https://aria.jpl.nasa.gov/
 
 Tay, C.W.J., Yun, SH., Chin, S.T. et al. Rapid flood and damage mapping using synthetic aperture radar in response to Typhoon Hagibis, Japan. Sci Data 7, 100 (2020). https://doi.org/10.1038/s41597-020-0443-5'
+
+ZHA0 N，LIU Y，Hsu F C，et a1．Time series analysis of VIIRS—DNB nighttime 1ights imagery for change detection in urban areas：A case study of devastation in Puerto Rico f而m hurricanes I瑚a and Maria[J]．Applied Geogr印hy，2020，120(1)：102222
 
 

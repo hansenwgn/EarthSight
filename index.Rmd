@@ -808,14 +808,14 @@ Environment Agency and Met Office (2015). Flood Forecasting Centre Five Year Rev
 
 European Environment Agency (2016). Flood risks and environmental vulnerability. https://www.eea.europa.eu/publications/flood-risks-and-environmental-vulnerability
 
-He, Yuanrong, Xiaorong Wang, Chunfang Chai, Deqing Yu, Yuanmao Zheng, and Dongkun Li. 2022. “Flood Damage Assessment and Visualization Based on NPP-VIIRS Nighttime Light Remote Sensing.” Journal of Natural Disaster, June, 13. https://doi.org/10.13577/j.jnd.2022.0309.
+Yuanrong, H. et al. (2022). “Flood Damage Assessment and Visualization Based on NPP-VIIRS Nighttime Light Remote Sensing.” Journal of Natural Disaster, June, 13. https://doi.org/10.13577/j.jnd.2022.0309.
 ---
 ## References
 
 
 IOWA FLOOD INFORMATION SYSTEM. https://ifis.iowafloodcenter.org/ifis/
 
-Li, Z.; Liu, H.; Luo, C.; Fu, G. Assessing Surface Water Flood Risks in Urban Areas Using Machine Learning. Water 2021, 13, 3520. https://doi.org/10.3390/w13243520
+Li, Z. et al. (2021) ‘Assessing Surface Water Flood Risks in Urban Areas Using Machine Learning’, Water, 13(24), p. 3520. doi:10.3390/w13243520.
 
 ‘Malaysia: Disaster Management Reference Handbook (June 2019)’ (2019). Center for Excellence in Disaster Management and Humanitarian Assistance.
 

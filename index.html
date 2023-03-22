@@ -192,7 +192,7 @@ Example of simulating watershed on a map of Digital Elevation Model (DEM)
   - quantifying the amount of water 
 
 
-&lt;video style="display: block; margin-left: auto; margin-right: auto; width: auto; height: auto;" autoplay&gt;
+&lt;video width="1440" height="300" autoplay&gt;
 &lt;source src="vids/400SqMileWatershed.mpeg" type="video/mp4"&gt;
 &lt;/video&gt;
 
@@ -210,18 +210,65 @@ DEM-based hydrological models
   - Planners: Floodplain zoning and land-use planning ( flood-resistant land uses, such as parks and recreational areas, to flood-prone regions.)
   - Emergency response teams can prioritise levees and floodwalls construction in certain areas
   - Design evacuation plans to minimise casualties
-
-&lt;video width="1440" height="560" autoplay&gt;
-&lt;source src="vids/400SqMileWatershed.mpeg" type="video/mp4"&gt;
-&lt;/video&gt;
-
-
-
-&lt;div class="footnotes"&gt;
-&lt;small&gt;
-- Reference: US Army Corps of Engineers, Hydrologic Engineering Center. (n.d.). &lt;a href="https://www.hec.usace.army.mil/software/hec-ras/" target="_blank"&gt;HEC-RAS&lt;/a&gt;. 
-&lt;/small&gt;
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="img/400SqMileWatershed - frame at 0m11s.jpg" alt="A frame slice of Watershed Simulation, Credit: US Army Corps of Engineers, Hydrologic Engineering Center. (n.d.). &amp;lt;a href=&amp;quot;https://www.hec.usace.army.mil/software/hec-ras/&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;HEC-RAS&amp;lt;/a&amp;gt;.  https://doi.org/10.3390/w13243520 " width="25%" /&gt;
+&lt;p class="caption"&gt;A frame slice of Watershed Simulation, Credit: US Army Corps of Engineers, Hydrologic Engineering Center. (n.d.). &lt;a href="https://www.hec.usace.army.mil/software/hec-ras/" target="_blank"&gt;HEC-RAS&lt;/a&gt;.  https://doi.org/10.3390/w13243520 &lt;/p&gt;
 &lt;/div&gt;
+
+---
+class: inverse, center, middle
+# Calling for a pipeline
+
+---
+
+### Persisting risks - Inflexibility in both time and space
+
+### If ——
+ - We shift the area of interest
+  
+ - Or, Progress from, say, 2022 to 2023
+
+--
+
+We have to redo watershed simulation with new data.
+
+--
+
+But we want to minimise avoidable repetitive human work, e.g., manual simulation of watershed for each date and each sub-zone of Kuala lumpur.
+
+--
+
+### So how do we improve temporal and spatial transferability and build a data pipeline?
+
+--
+
+### And what about automation? 
+
+ 
+---
+### Machine-learning based prediction - A blackbox considering numerous factors
+
+| Data Pipeline Step | Description |
+| --- | --- |
+| Data Acquirement | Object extraction of Multi-spetcral and Radar data for Kuala Lumpur -&gt; Data fusion on object-based level -&gt; Image classification to get elevation, slope, soil type, substrate, land cover, NDVI, land use, imperviousness, distance to river, and distance to road |
+| Pre-processing | Standardize with EPSG:3168 coordinate system -&gt; convert vector to raster maps -&gt; clip to Kuala Lumpur boundarie -&gt;  resample to 1m resolution -&gt; convert raster images to numerical data with 10m grid size using Rasterio |
+| Feature Selection | Perform multicollinearity diagnosis test to exclude similar features -&gt; Use features with VIF less than 10 in ANN models |
+| Data Balancing | Balance data with oversampling and undersampling due to imbalanced flood risk distribution. Adjust non-flood areas (98%, 95%, 90% for 30-, 100-, and 1000-year events) and level 4 risk areas (0.01% and 0.06% for 30- and 100-year events) |
+| Model Selection &amp; Assessment | Apply NB, perceptron, ANN, and CNN models for 30-, 100-, and 1000-year flood events. Evaluate performance using following metrics |
+---
+## Flood prediction
+### Metrics
+Accuracy, F-beta score, and receiver operating characteristic (ROC) curve, as well as the oversampling and undersampling techniques used to address the issue of data imbalance. 
+
+---
+## Flood prediction
+### A comparison across models:
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="img/Prediction_Accuracy.png" alt="Credit: Li Z, Liu H, Luo C, Fu G. Assessing Surface Water Flood Risks in Urban Areas Using Machine Learning. Water. 2021; 13(24):3520. https://doi.org/10.3390/w13243520 " width="100%" /&gt;
+&lt;p class="caption"&gt;Credit: Li Z, Liu H, Luo C, Fu G. Assessing Surface Water Flood Risks in Urban Areas Using Machine Learning. Water. 2021; 13(24):3520. https://doi.org/10.3390/w13243520 &lt;/p&gt;
+&lt;/div&gt;
+
 ---
 class: inverse, middle
 # How Can Flood Prediction Help Kuala Lumpur: 
@@ -229,9 +276,9 @@ class: inverse, middle
 
 - ### How are information gaps closed
 
-- ### How are losses prevented
+- ### How are loss prevented
 
-- ### Identifying persisting risks
+- ### Identify persisting risks
 
   
 ---
@@ -254,24 +301,33 @@ References: - European Environment Agency (2016). Flood risks and environmental 
 &lt;/div&gt;
 
 ---
-### Machine-learning based prediction - A blackbox considering numerous factors
 
-| Data Pipeline Step | Description |
-| --- | --- |
-| Data Collection | Collect geo-environmental data for Kuala Lumpur, including elevation, slope, soil type, substrate, land cover, NDVI, land use, imperviousness, distance to river, and distance to road |
-| Preprocessing | Standardize maps using QGIS: project into EPSG:3168 coordinate system, convert vector to raster maps, clip to Kuala Lumpur boundaries, resample to 1m resolution, and convert raster images to numerical data with 10m grid size using Rasterio |
-| Feature Selection | Perform multicollinearity diagnosis test to exclude similar features, reducing training time and computational power. Use features with VIF less than 10 in ANN models |
-| Data Balancing | Balance data with oversampling and undersampling due to imbalanced flood risk distribution. Adjust non-flood areas (98%, 95%, 90% for 30-, 100-, and 1000-year events) and level 4 risk areas (0.01% and 0.06% for 30- and 100-year events) |
-| Model Selection &amp; Assessment | Apply NB, perceptron, ANN, and CNN models for 30-, 100-, and 1000-year flood events. Evaluate performance using suitable metrics |
----
-## Flood prediction
-### Metrics
-Accuracy, F-beta score, and receiver operating characteristic (ROC) curve, as well as the oversampling and undersampling techniques used to address the issue of data imbalance. 
----
-## Flood prediction
-### What do we mean by accuracy:
+## Are information gaps "closed"? - Managing probability
 
-&lt;img src="img/Prediction_Accuracy.png" width="100%" style="display: block; margin: auto;" /&gt;
+ ### What if ——
+ Due to a spatial mismatch between data scope and decision-making scope, we overlooked a location with a 99% chance of flooding and sent our response team to a place with only a 65% (what we consider to be the highest) likelihood of flooding.
+ 
+--
+ 
+In this scenario, the emergency response strategy fails. Therefore, keeping comprehensive data input and strategy output is essential.
+ 
+--
+
+### The trikiness of dealing with probability
+
+--
+
+  - Should we allocate resources proportional to the probability of flood ocurrence?
+
+--
+  
+  - Or, should we design a response priority hierarchy considering both likelihood and potential harm?
+  
+--
+
+  - Decide with a function design? Human-added weights? Machine-learned weights?
+
+
 ---
 class: inverse, center, middle
 
@@ -291,8 +347,8 @@ class: inverse, center, middle
 class: inverse, center, middle
 # Introducing Real-time Monitoring
 ---
-## Flood risk management - real-time monitoring
-### Synthetic Aperture Radar (SAR) for flood monitoring
+## Flood risk management - Real-time monitoring
+### Synthetic Aperture Radar (SAR)
 - SAR: Active remote sensing technology that can penetrate clouds, operate day or night, and provide high-resolution imagery1
 
 - Real-time flood monitoring: Timely and accurate information on flood extent, duration, and impact for emergency response and management
@@ -313,13 +369,33 @@ References: - NASA Jet Propulsion Laboratory (2021). ARIA Project. https://aria.
 ---
 
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="img/SAR.webp" alt="FPM comparison with GSI aerial and Planet optical imagery for Fukushima. Credit: https://doi.org/10.1038/s41597-020-0443-5" width="75%" /&gt;
+&lt;img src="img/SAR.webp" alt="FPM comparison with GSI aerial and Planet optical imagery for Fukushima. Credit: https://doi.org/10.1038/s41597-020-0443-5" width="70%" /&gt;
 &lt;p class="caption"&gt;FPM comparison with GSI aerial and Planet optical imagery for Fukushima. Credit: https://doi.org/10.1038/s41597-020-0443-5&lt;/p&gt;
 &lt;/div&gt;
 
+
+---
+## Risks of Real-time Monitoring 
+
+ - ### How real-time is real time? 
+  - Does a 5-seconds delay in data transmission fail an essential decision-making? 
+  
+--
+
+ - ### How to quantify tolerance thresholds in regards of delay, error and bias?
+  - A sharp cutoff or a fuzzy one?
+
+--
+
+ - ### What degree of accuracy? Managing response time of
+  - Data acquirement, transmission and calculation
+  - Human-based decision-making
+  
+  ### Incurs extra cost. The estimation is almost always NOT deterministic.
+
 ---
 class: inverse, center, middle
-# When AIoT comes in
+# When AIoT Comes In
 
 ---
 ## AIoT comes to aid
@@ -335,41 +411,82 @@ class: inverse, center, middle
 | Almost always generate outcome | Untimely | Real-time data enables timely predictions and responses |
 
 ---
-## AIOT comes to aid
-Connect remote-sensing devices to the IoT network, enabling seamless data flow between devices, edge computing nodes, and cloud platforms. This integration can be achieved using communication protocols such as MQTT, LoRaWAN, or Zigbee.
+## AIoT comes to aid
+Connects remote-sensing devices to the IoT network, enabling seamless data flow between
+ - Devices
+ - Edge computing nodes
+ - Cloud platforms
+ 
+(Supprted by communication protocols such as MQTT, LoRaWAN, or Zigbee)
 
-- Data Collection: IoT devices, such as water level sensors, soil moisture sensors, and weather stations, can supplement EO data and remote sensing information by providing real-time, hyperlocal data on environmental factors crucial for flood prediction.
+--
 
-- Data Fusion: Combine IoT-generated data with EO data and remote sensing datasets, such as SAR imagery, to create a comprehensive, high-resolution input for ML-based flood prediction models. This fusion helps capture local variations and enhances overall model performance.
+- To supplement EO data with real-time, hyperlocal data collected from IoT devices:
+ - Water level sensors
+ - Soil moisture sensors
+ - Weather stations
 
-- Model Calibration and Validation: IoT devices can provide continuous ground truth data for calibrating and validating ML-based flood prediction models, leading to more accurate and reliable predictions.
+- To help capture local variations and enhances overall model performance, perform data fusion, i.e., combine:
+  - IoT-generated data
+  - EO data 
+  - SAR imagery and other remote sensing datasets
 
-- Adaptive Learning: Allows ML models to continuously learn from real-time data, adjusting and improving predictive capabilities over time. This adaptability is crucial for responding to changing environmental conditions and extreme weather events.
+---
+## AIoT comes to aid
+### Automatical iteration of models:
+
+With ground truth data continuously provided by IoT devices, models are evaluated and calibrated by:
+
+ - Real-time ground truth data input from nature
+ 
+ - Feedback from decision-making models and human 
+  
+Adaptive-learning models adjust and improve predictive capabilities over time, allowing for responding to
+
+ - Changing environmental conditions 
+ 
+ - Extreme weather events
 
 ---
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="img/Iowa_alert.png" alt="Real-time water levels and stage heights with flood alert levels, and flood forecast" width="100%" /&gt;
-&lt;p class="caption"&gt;Real-time water levels and stage heights with flood alert levels, and flood forecast&lt;/p&gt;
+&lt;img src="img/Iowa_alert.png" alt="Real-time water levels and stage heights with flood alert levels, and flood forecast. Credit: https://ifis.iowafloodcenter.org/ifis/" width="100%" /&gt;
+&lt;p class="caption"&gt;Real-time water levels and stage heights with flood alert levels, and flood forecast. Credit: https://ifis.iowafloodcenter.org/ifis/&lt;/p&gt;
 &lt;/div&gt;
 ---
 class: inverse, center, middle
-# What else is possible?
+# What Else Is Possible?
 
 
 ---
 ##Outlook - Automated decision-making 
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="img/AIoT_workflow.png" alt="AIoT Architecture for auto-decision-making" width="70%" /&gt;
+&lt;img src="img/AIoT_workflow.png" alt="AIoT Architecture for auto-decision-making" width="68%" /&gt;
 &lt;p class="caption"&gt;AIoT Architecture for auto-decision-making&lt;/p&gt;
 &lt;/div&gt;
 
 ---
 ##Outlook - Automated decision-making based on Real-time analytics
-Automated decision-making based on Real-time analytics: 
 
-- Implement AI models on edge devices or cloud platforms to perform real-time analytics on remote-sensing data. 
+- Edge devices take in real-world data -&gt; 
 
-- By combining remote sensing with other IoT sensor data, AI models can generate valuable insights and enable automated decision-making for flood prediction, and floodplain zoning.
+- Edge computation nodes share computation tasks (pre-processing, training, validation, etc.) in parallel -&gt; 
+
+- Predictions generated by ever-updating models are compared through and integrated at decision centre / A ensemble model is given -&gt; 
+
+- Strategy coping with status quo is auto-generated  
+
+--
+
+Vulnerable in that the system is very hackable (Data input, analysis, strategy output are all handled by AI):
+
+- What if the edge devices in a crucial area goes offline?
+
+- How to make sure the ensemble always weight towards maximum survival of people?
+
+--
+
+We emphasise the disaster awareness of human being: **All final decisions require expert review and human approval**. So the solution network can be scalable, elastic to damage, and serves the public's well-being correctly.
+
 ---
 class: inverse, center, middle
 # Assessing flood damage
@@ -641,10 +758,10 @@ Environment Agency and Met Office (2015). Flood Forecasting Centre Five Year Rev
 
 European Environment Agency (2016). Flood risks and environmental vulnerability. https://www.eea.europa.eu/publications/flood-risks-and-environmental-vulnerability
 
+He, Yuanrong, Xiaorong Wang, Chunfang Chai, Deqing Yu, Yuanmao Zheng, and Dongkun Li. 2022. “Flood Damage Assessment and Visualization Based on NPP-VIIRS Nighttime Light Remote Sensing.” Journal of Natural Disaster, June, 13. https://doi.org/10.13577/j.jnd.2022.0309.
 ---
 ## References
 
-He, Yuanrong, Xiaorong Wang, Chunfang Chai, Deqing Yu, Yuanmao Zheng, and Dongkun Li. 2022. “Flood Damage Assessment and Visualization Based on NPP-VIIRS Nighttime Light Remote Sensing.” Journal of Natural Disaster, June, 13. https://doi.org/10.13577/j.jnd.2022.0309.
 
 IOWA FLOOD INFORMATION SYSTEM. https://ifis.iowafloodcenter.org/ifis/
 
@@ -658,7 +775,11 @@ NASA Jet Propulsion Laboratory (2021). ARIA Project. https://aria.jpl.nasa.gov/
 
 Tay, C.W.J., Yun, SH., Chin, S.T. et al. Rapid flood and damage mapping using synthetic aperture radar in response to Typhoon Hagibis, Japan. Sci Data 7, 100 (2020). https://doi.org/10.1038/s41597-020-0443-5'
 
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 ZHA0 N，LIU Y，Hsu F C，et a1．Time series analysis of VIIRS—DNB nighttime 1ights imagery for change detection in urban areas：A case study of devastation in Puerto Rico from hurricanes Irma and Maria[J]．Applied Geography，2020，120(1)：102222
+=======
+ZHA0 N，LIU Y，Hsu F C，et a1．Time series analysis of VIIRS—DNB nighttime 1ights imagery for change detection in urban areas：A case study of devastation in Puerto Rico f而m hurricanes I瑚a and Maria[J]．Applied Geograhy，2020，120(1)：102222
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 2d5b0759d6f2838d4b0479a1acd5abb0e9826b29
 
 
     </textarea>
